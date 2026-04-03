@@ -24,6 +24,10 @@
     }
 
     .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
       margin-bottom: 24px;
     }
 
@@ -37,6 +41,23 @@
       margin: 0;
       color: #6b6d6e;
       font-size: 0.9rem;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .back-link img {
+      width: 44px;
+      height: 44px;
+    }
+
+    .back-link:hover {
+      opacity: 0.85;
     }
 
     .upload-area {
@@ -91,13 +112,24 @@
       margin-bottom: 16px;
       font-size: 0.9rem;
     }
+
+    @media (max-width: 720px) {
+      .header {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <h1>Provable Proof Viewer</h1>
-      <p id="page-url">Loading...</p>
+      <div>
+        <h1>Provable Proof Viewer</h1>
+        <p id="page-url">Loading...</p>
+      </div>
+      <a href="/" class="back-link" aria-label="Provable home">
+        <img src="/images/provable.png" alt="Provable">
+      </a>
     </div>
 
     <div id="error-container"></div>

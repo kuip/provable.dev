@@ -62,6 +62,15 @@ img {
     max-width: 100%;
 }
 
+code {
+    background: rgba(11, 102, 127, 0.08);
+    border: 1px solid rgba(11, 102, 127, 0.12);
+    border-radius: 6px;
+    padding: 0.08rem 0.32rem;
+    font: inherit;
+    color: var(--ink);
+}
+
 .page-shell,
 .site-footer {
     width: min(1360px, calc(100vw - 40px));
@@ -148,8 +157,7 @@ img {
 .hero-lockup {
     display: inline-flex;
     align-items: center;
-    gap: 14px;
-    margin-bottom: 10px;
+    margin-bottom: 14px;
 }
 
 .hero-product-logo {
@@ -224,7 +232,7 @@ img {
 
 .carousel-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     gap: 18px;
 }
@@ -259,6 +267,10 @@ img {
     padding-bottom: 8px;
     scroll-snap-type: x mandatory;
     scrollbar-width: thin;
+}
+
+.feature-track {
+    grid-auto-columns: 100%;
 }
 
 .carousel-track::-webkit-scrollbar {
@@ -338,6 +350,163 @@ img {
 
 .section-heading p {
     max-width: 64ch;
+}
+
+.workflow-section {
+    display: grid;
+    gap: 18px;
+}
+
+.workflow-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.workflow-tab {
+    padding: 11px 16px;
+    border: 1px solid rgba(20, 27, 33, 0.12);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.78);
+    color: var(--muted);
+    font: inherit;
+    font-size: 0.98rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.workflow-tab.active,
+.workflow-tab[aria-selected="true"] {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: #fff;
+}
+
+.workflow-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    gap: 22px;
+    align-items: start;
+}
+
+.workflow-copy {
+    display: grid;
+    gap: 14px;
+}
+
+.workflow-copy h2 {
+    margin: 0;
+    color: var(--ink);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 0.98;
+    max-width: 12ch;
+}
+
+.workflow-copy p,
+.workflow-product p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.58;
+    font-size: 1.03rem;
+}
+
+.workflow-quote {
+    padding-left: 16px;
+    border-left: 3px solid rgba(203, 123, 49, 0.6);
+    color: var(--ink) !important;
+    font-size: 1.08rem !important;
+}
+
+.workflow-points {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.workflow-points li {
+    margin: 8px 0;
+    line-height: 1.45;
+}
+
+.workflow-products {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.workflow-product {
+    display: grid;
+    align-content: start;
+    gap: 12px;
+    min-height: 100%;
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: var(--paper);
+    box-shadow: var(--shadow);
+    text-decoration: none;
+}
+
+.workflow-product.is-link:hover {
+    transform: translateY(-2px);
+    border-color: rgba(11, 102, 127, 0.28);
+}
+
+.workflow-product-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.workflow-product-head h3 {
+    margin: 0;
+    color: var(--ink);
+    font-size: 1.36rem;
+    line-height: 1.06;
+}
+
+.workflow-product-logo {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    flex: 0 0 auto;
+}
+
+.workflow-product-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    color: var(--ink);
+    font-weight: 700;
+}
+
+.workflow-product-link::after {
+    content: "\2197";
+}
+
+.ethos-panel {
+    padding: 20px 28px;
+}
+
+.ethos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.ethos-card {
+    padding: 18px 20px;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.74);
+}
+
+.ethos-card p {
+    margin: 0;
+    color: var(--ink);
+    font-size: 1.18rem;
+    font-weight: 700;
+    line-height: 1.2;
 }
 
 .products-track {
@@ -519,7 +688,13 @@ img {
 
 @media (max-width: 1100px) {
     .hero-panel,
+    .workflow-panel,
     .subpage-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .workflow-products,
+    .ethos-grid {
         grid-template-columns: 1fr;
     }
 
@@ -560,6 +735,10 @@ img {
 
     .carousel-track,
     .products-track {
+        grid-auto-columns: minmax(280px, 92vw);
+    }
+
+    .feature-track {
         grid-auto-columns: minmax(280px, 92vw);
     }
 }
