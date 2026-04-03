@@ -17,7 +17,7 @@ export const kayrosSlides = [
   },
   {
     kicker: "Blockchains and Cryptocurrencies",
-    title: "Consensus for execution layers that need maximum TPS.",
+    title: "Consensus for execution layers.",
     body: "Any chain can use our indexers for the maximum TPS its execution layer can support. No more MEV, bots, or front-running."
   },
 ];
@@ -293,5 +293,5 @@ export const workflows = [
 export const ethos = [
   "Tools for a provable new world",
   "The right to evidence must be a human right.",
-  "Proofs will become more important than money."
+  "Proofs are more important than money."
 ];
