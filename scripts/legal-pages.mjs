@@ -84,24 +84,24 @@ export function renderLegalHtml({
 
       :root {
         color-scheme: light dark;
-        --bg: #f2f5f7;
-        --card: rgba(255, 255, 255, 0.92);
+        --bg: #eef2f5;
+        --card: rgba(255, 255, 255, 0.98);
         --text: #141b21;
         --muted: #697581;
         --line: rgba(20, 27, 33, 0.1);
-        --link: #0b667f;
-        --shadow: 0 24px 64px rgba(17, 24, 31, 0.08);
+        --link: #5a6f81;
+        --shadow: 0 18px 44px rgba(17, 24, 31, 0.06);
       }
 
       @media (prefers-color-scheme: dark) {
         :root {
-          --bg: #141b20;
-          --card: rgba(19, 27, 33, 0.94);
+          --bg: #10151a;
+          --card: rgba(19, 25, 31, 0.98);
           --text: #ecf2f6;
           --muted: #97a6b1;
           --line: rgba(236, 242, 246, 0.1);
-          --link: #67b6cd;
-          --shadow: 0 24px 64px rgba(0, 0, 0, 0.28);
+          --link: #93a6b5;
+          --shadow: 0 20px 44px rgba(0, 0, 0, 0.22);
         }
       }
 
@@ -111,10 +111,7 @@ export function renderLegalHtml({
 
       body {
         margin: 0;
-        background:
-          radial-gradient(circle at top left, rgba(124, 138, 149, 0.14), transparent 28%),
-          radial-gradient(circle at top right, rgba(11, 102, 127, 0.15), transparent 30%),
-          linear-gradient(180deg, #f2f5f7 0%, #edf2f5 52%, #e6ecef 100%);
+        background: linear-gradient(180deg, #eef2f5 0%, #e9edf1 52%, #e3e8ec 100%);
         color: var(--text);
         font: 16px/1.75 "Roboto Condensed", "Arial Narrow", "Liberation Sans Narrow", "Nimbus Sans Narrow", sans-serif;
       }

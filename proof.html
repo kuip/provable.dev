@@ -39,14 +39,14 @@
 
     :root {
       color-scheme: light dark;
-      --bg: #eef2f4;
-      --text: #2b2d2e;
-      --muted: #6b6d6e;
-      --surface: rgba(255, 255, 255, 0.92);
+      --bg: #eef2f5;
+      --text: #202a33;
+      --muted: #6a7680;
+      --surface: rgba(255, 255, 255, 0.97);
       --line: rgba(43, 45, 46, 0.12);
       --line-strong: rgba(43, 45, 46, 0.18);
-      --button: #596169;
-      --button-hover: #3f474e;
+      --button: #5f6f7a;
+      --button-hover: #4a5862;
       --error-bg: #fee2e2;
       --error-line: #fecaca;
       --error-text: #dc2626;
@@ -55,10 +55,10 @@
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #141b20;
+        --bg: #10151a;
         --text: #ebf1f5;
         --muted: #95a3ae;
-        --surface: rgba(21, 29, 35, 0.94);
+        --surface: rgba(19, 25, 31, 0.98);
         --line: rgba(235, 241, 245, 0.1);
         --line-strong: rgba(235, 241, 245, 0.16);
         --button: #7c8a95;
@@ -74,10 +74,7 @@
       margin: 0;
       padding: 24px;
       font-family: 'Roboto Condensed', 'Arial Narrow', 'Liberation Sans Narrow', 'Nimbus Sans Narrow', sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(124, 138, 149, 0.12), transparent 26%),
-        radial-gradient(circle at top right, rgba(11, 102, 127, 0.12), transparent 30%),
-        linear-gradient(180deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 88%, #0b667f 4%) 100%);
+      background: linear-gradient(180deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 94%, #7f8b95 6%) 100%);
       color: var(--text);
     }
 
