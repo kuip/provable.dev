@@ -3,162 +3,289 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Primary Meta Tags -->
-    <title>Provable.dev - Cryptographic Proof Tools for Digital Evidence</title>
-    <meta name="title" content="Provable.dev - Cryptographic Proof Tools for Digital Evidence">
-    <meta name="description" content="Create cryptographic, timestamped proofs of digital actions. Tools for form submissions, web pages, emails, and media. The right to evidence is a human right.">
-    <meta name="keywords" content="cryptographic proof, digital evidence, timestamp, provable form, blockchain proof, notarization, timestamped proof, digital proof, evidence verification, cryptographic verification">
-    <meta name="author" content="Kuip Limited">
+    <title>Provable - High-Throughput Notarization Infrastructure</title>
+    <meta name="title" content="Provable - High-Throughput Notarization Infrastructure">
+    <meta name="description" content="Provable builds high-throughput notarization infrastructure for data streams, media, databases, and real-world assets. Kayros is the core high-throughput notarization system.">
+    <meta name="keywords" content="high-throughput notarization, kayros, media notarization, database notarization, real-world assets, frame-level video authentication">
+    <meta name="author" content="Provable">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://provable.dev/">
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://provable.dev/">
-    <meta property="og:title" content="Provable.dev - Cryptographic Proof Tools for Digital Evidence">
-    <meta property="og:description" content="Create cryptographic, timestamped proofs of digital actions. Tools for form submissions, web pages, emails, and media. Provable notarization at global scale, for digital actions. The right to evidence is a human right.">
+    <meta property="og:title" content="Provable - High-Throughput Notarization Infrastructure">
+    <meta property="og:description" content="Kayros, Oliver, Carpe!, and Veritas form a notarization stack for high-trust systems.">
     <meta property="og:image" content="https://provable.dev/images/provable.png">
 
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://provable.dev/">
-    <meta property="twitter:title" content="Provable.dev - Cryptographic Proof Tools for Digital Evidence">
-    <meta property="twitter:description" content="Create cryptographic, timestamped proofs of digital actions. Tools for form submissions, web pages, emails, and media. Provable notarization at global scale, for digital actions. The right to evidence is a human right.">
+    <meta property="twitter:title" content="Provable - High-Throughput Notarization Infrastructure">
+    <meta property="twitter:description" content="Kayros is the core high-throughput notarization system behind Provable.">
     <meta property="twitter:image" content="https://provable.dev/images/provable.png">
 
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "Provable.dev",
+      "name": "Provable",
       "url": "https://provable.dev",
       "logo": "https://provable.dev/images/provable.png",
-      "description": "Provable notarization at global scale, for digital actions. Tools for creating cryptographic, timestamped proofs of digital actions.",
-      "foundingDate": "2025",
-      "founder": {
-        "@type": "Organization",
-        "name": "Kuip Limited"
-      },
-      "offers": [
-        {
-          "@type": "SoftwareApplication",
-          "name": "Provable Form",
-          "applicationCategory": "BrowserApplication",
-          "operatingSystem": "Chrome",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-          }
-        }
+      "description": "Provable builds high-throughput notarization infrastructure for data streams, media, databases, and real-world assets.",
+      "sameAs": [
+        "https://x.com/is_provable"
       ]
     }
     </script>
 </head>
 <body>
-    <main class="container">
-        <section id="hero" class="hero-section">
-            <a href="/proof.html" target="_blank" class="link verify-button">Verify a proof</a>
-            <div class="hero-grid">
-                <div class="hero-image">
-                    <img src="/images/provable.png" alt="Provable - Postulatio, Consentio, Veritas" class="gate">
-                    <p class="subtitle">tools for a provable new world</p>
+    <main class="page-shell">
+        <header class="topbar">
+            <a href="/" class="brand-lockup" aria-label="Provable">
+                <img src="/images/provable.png" alt="Provable" class="brand-logo">
+                <span class="brand-name">Provable</span>
+            </a>
+            <nav class="topnav" aria-label="Primary">
+                <a href="#kayros">Kayros</a>
+                <a href="#products">Products</a>
+                <a href="#sectors">Sectors</a>
+                <a href="/proof.html" target="_blank" rel="noreferrer" class="topnav-cta">Verify a proof</a>
+            </nav>
+        </header>
+
+        <section id="kayros" class="hero-panel">
+            <div class="hero-copy">
+                <div class="hero-lockup">
+                    <img src="/images/kayros.png" alt="Kayros" class="hero-product-logo">
+                    <p class="section-kicker">Kayros</p>
                 </div>
-                <div class="hero-content">
-                    <h1>provable</h1>
-                    <div class="principles">
-                        <p class="principle-statement">cryptographic notarization at a global scale, for any digital actions.</p>
+                <h1>The high-throughput notarization system behind Provable.</h1>
+                <p class="hero-lead">The fastest transaction indexer ordered by time, at global scale.</p>
+                <div class="metric-pills">
+                    <span>&gt; 1 million TPS on one single layer</span>
+                    <span>Multi-layer expansion</span>
+                    <span>Ordered by time</span>
+                    <span>Content-agnostic</span>
+                </div>
+            </div>
+            <div class="carousel-shell">
+                <div class="carousel-header">
+                    <h2>Kayros capabilities</h2>
+                    <div class="carousel-controls">
+                        <button type="button" class="carousel-button" data-carousel-target="kayros-track" data-direction="-1" aria-label="Previous Kayros slide">‹</button>
+                        <button type="button" class="carousel-button" data-carousel-target="kayros-track" data-direction="1" aria-label="Next Kayros slide">›</button>
                     </div>
-                    <div class="intro-box">
-                        <p>The right to evidence must be a human right.</p>
-                        <p>Proofs are non-political, non-biased, and immune to manipulation by wealth or power. Proofs will become more important than money.</p>
+                </div>
+                <div id="kayros-track" class="carousel-track">
+                    <article class="carousel-card compact-card">
+                        <p class="card-kicker">Banks</p>
+                        <h3>VISA-scale indexing without censorship.</h3>
+                        <p>A transparent indexer for payment-scale systems that remains content-agnostic and keeps transaction privacy intact.</p>
+                    </article>
+                    <article class="carousel-card compact-card">
+                        <p class="card-kicker">Blockchains</p>
+                        <h3>Consensus for execution layers that need maximum TPS.</h3>
+                        <p>Built to reduce MEV pressure and support private transactions or private digital contracts until proof is required.</p>
+                    </article>
+                    <article class="carousel-card compact-card">
+                        <p class="card-kicker">New proof markets</p>
+                        <h3>Media, research, IoT, and machine actions.</h3>
+                        <p>Photos, documents, videos, scientific experiments, and IoT actions need proof of both timing and content at indexing time.</p>
+                    </article>
+                    <article class="carousel-card video-card">
+                        <div class="video-frame">
+                            <iframe src="https://www.youtube-nocookie.com/embed/JEw9N6c1i2g" title="Kayros Demo Version 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <p class="card-kicker">Demo</p>
+                        <h3>Kayros: Demo Version 1</h3>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="section-panel">
+            <div class="section-heading">
+                <p class="section-kicker">Products</p>
+                <h2>Products built on Kayros.</h2>
+                <p>Each one is focused on a specific notarization workflow.</p>
+            </div>
+            <div class="carousel-shell">
+                <div class="carousel-header">
+                    <h2>Swipe through products</h2>
+                    <div class="carousel-controls">
+                        <button type="button" class="carousel-button" data-carousel-target="products-track" data-direction="-1" aria-label="Previous product">‹</button>
+                        <button type="button" class="carousel-button" data-carousel-target="products-track" data-direction="1" aria-label="Next product">›</button>
                     </div>
                 </div>
+                <div id="products-track" class="carousel-track products-track">
+                    <article class="carousel-card product-slide">
+                        <div class="slide-head">
+                            <img src="/images/oliver.png" alt="Oliver" class="slide-logo">
+                        <div>
+                            <p class="card-kicker">Media and RWA</p>
+                            <h3>Oliver</h3>
+                        </div>
+                    </div>
+                        <p>Notarization for photos, video, audio, and tagged real-world assets.</p>
+                        <ul>
+                            <li>Frame-level video notarization and authentication</li>
+                            <li>Capture provenance at the source</li>
+                            <li>Real-world asset traceability workflows</li>
+                        </ul>
+                        <div class="video-frame">
+                            <iframe src="https://www.youtube-nocookie.com/embed/jQGVPddBclc" title="Oliver media notarization demo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </article>
+
+                    <article class="carousel-card product-slide">
+                        <div class="slide-head">
+                            <img src="/images/oliver.png" alt="Oliver for RWA" class="slide-logo">
+                        <div>
+                            <p class="card-kicker">RWA</p>
+                            <h3>Oliver for Real-World Assets</h3>
+                        </div>
+                    </div>
+                        <p>Attach notarization to physical assets and tags across logistics and verification workflows.</p>
+                        <ul>
+                            <li>QR, barcode, NFC/RFID, and BLE-linked records</li>
+                            <li>Physical-to-digital asset verification</li>
+                            <li>Traceability for field operations</li>
+                        </ul>
+                        <div class="video-frame">
+                            <iframe src="https://www.youtube-nocookie.com/embed/5U1kOKrBDts" title="Oliver real world assets demo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </article>
+
+                    <article class="carousel-card product-slide">
+                        <div class="slide-head">
+                            <img src="/images/carpe.png" alt="Carpe!" class="slide-logo">
+                        <div>
+                            <p class="card-kicker">Database integrity</p>
+                            <h3>Carpe!</h3>
+                        </div>
+                    </div>
+                        <p>Database notarization at record level with precise, inspectable history.</p>
+                        <ul>
+                            <li>Record-level history</li>
+                            <li>Built for operational datasets</li>
+                            <li>Exact mutation tracking instead of coarse audit logs</li>
+                        </ul>
+                        <div class="video-frame">
+                            <iframe src="https://www.youtube-nocookie.com/embed/EuwNDeDu9Ao" title="Carpe database notarization demo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </article>
+
+                    <article class="carousel-card product-slide">
+                        <div class="slide-head">
+                            <img src="/images/veritas.png" alt="Veritas" class="slide-logo">
+                        <div>
+                            <p class="card-kicker">Document history</p>
+                            <h3>Veritas</h3>
+                        </div>
+                    </div>
+                        <p>Local document authentication and revision history with a clear verification path.</p>
+                        <ul>
+                            <li>Document authentication</li>
+                            <li>Local-first history</li>
+                            <li>Clear provenance across revisions</li>
+                        </ul>
+                        <div class="video-frame">
+                            <iframe src="https://www.youtube-nocookie.com/embed/8VEWngK8S7E" title="Veritas demo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
 
-        <section id="current-tools" class="products-section">
-            <h2>Provable Tools</h2>
-            <div class="product-list">
-                <div class="product-item">
-                    <h3>Provable Form</h3>
-                    <p>Browser extension for Chrome that creates a cryptographic timestamped proof of submitting an online form. Your data remains private. We do not store it.</p>
-                    <a href="https://chromewebstore.google.com/detail/provable-form/djppgolnnaeaoingadhdbianibehcpeb" target="_blank" class="link">Chrome Web Store →</a>
+        <section id="sectors" class="section-panel">
+            <div class="section-heading">
+                <p class="section-kicker">Use Cases</p>
+                <h2>Where this fits.</h2>
+                <p>Three operating contexts where chronology and proof matter most.</p>
+            </div>
+            <div class="carousel-shell">
+                <div class="carousel-header">
+                    <h2>Sector tracks</h2>
+                    <div class="carousel-controls">
+                        <button type="button" class="carousel-button" data-carousel-target="sectors-track" data-direction="-1" aria-label="Previous sector">‹</button>
+                        <button type="button" class="carousel-button" data-carousel-target="sectors-track" data-direction="1" aria-label="Next sector">›</button>
+                    </div>
                 </div>
-                <div class="product-item">
-                    <h3>Provable Web</h3>
-                    <p>Browser extension for Chrome that creates a cryptographic timestamped proof of a web page. From HTML, to HTTP requests, to browser extension scripts loaded in the page. Your data remains private.</p>
-                    <a href="https://chromewebstore.google.com/detail/provable-web/kgmbhnafpiiiapfpheibbahlmladldmi" target="_blank" class="link">Chrome Web Store →</a>
-                </div>
-                <div class="product-item">
-                    <h3>Provable Email</h3>
-                    <p>Notarize your emails: add <a href="mailto:kayros1@dmail.provable.dev">kayros1@dmail.provable.dev</a> as To, Cc or Bcc and you will receive a cryptographic proof. Your data remains private. We do not store your email message.</p>
-                </div>
-                <div class="product-item">
-                    <h3>Provable SDK</h3>
-                    <p>TypeScript, Python, Golang packages for adding cryptographic notarization to your critical APIs.</p>
-                    <a href="https://github.com/kuip/provable-sdk" target="_blank" class="link">SDK →</a>
-                </div>
-                <div class="product-item">
-                    <h3>Provable Files</h3>
-                    <p>A secure, fully notarized folder that captures any file change. Compatible with Google Drive. Contact us for early testing.</p>
-                </div>
-                <div class="product-item">
-                    <h3>Kayros Indexer</h3>
-                    <p>Our >65k TPS indexer can record and timestamp any digital action in a fully anonymized way, allowing you to have notarized private proofs of digital actions. Internal testing (ver.2): 1 mil TPS possible on one level. Kayros can be multi-level, reaching global scale.</p>
-                    <a href="https://kayros.kuip.co.uk/" target="_blank" class="link">Learn More →</a>
-                </div>
-                <div class="product-item">
-                    <h3>Provable Email Forwarding</h3>
-                    <p>A new email forwarding protocol that authenticates the original email and the email chain. Contact us for integrating it with your tools.</p>
-                    <a href="https://wasmx.provable.dev/docs/architecture/provable_email_forwarding" target="_blank" class="link">View Documentation →</a>
-                </div>
-                <div class="product-item">
-                    <h3>The most expressive WASM blockchain tech</h3>
-                    <p>Multi VM, language-agnostic, general & domain-specific language interpreters, variety of host APIs.</p>
-                    <a href="https://wasmx.provable.dev" target="_blank" class="link">View Documentation →</a>
+                <div id="sectors-track" class="carousel-track">
+                    <article class="carousel-card sector-slide">
+                        <p class="card-kicker">01</p>
+                        <h3>Industry</h3>
+                        <p>High-throughput data streams, production systems, supply chains, and real-world asset traceability.</p>
+                        <ul>
+                            <li>Industrial telemetry and machine events</li>
+                            <li>RWA pipelines and asset-linked records</li>
+                            <li>Systems where throughput and chronology both matter</li>
+                        </ul>
+                    </article>
+                    <article class="carousel-card sector-slide">
+                        <p class="card-kicker">02</p>
+                        <h3>Journalism</h3>
+                        <p>Source material, field evidence, and public-interest reporting where authenticity and history must survive scrutiny.</p>
+                        <ul>
+                            <li>Authenticating captured media</li>
+                            <li>Preserving evidence chains</li>
+                            <li>Protecting documentary history under pressure</li>
+                        </ul>
+                    </article>
+                    <article class="carousel-card sector-slide">
+                        <p class="card-kicker">03</p>
+                        <h3>Vision systems</h3>
+                        <p>Maritime software, public cameras, bodycams, drones, and smart glasses that should notarize both frames and derived decisions.</p>
+                        <ul>
+                            <li>Target detection and surveillance workflows</li>
+                            <li>Public cameras and bodycams</li>
+                            <li>Drones, smart glasses, and industrial vision</li>
+                        </ul>
+                    </article>
                 </div>
             </div>
-        </section>
-        <section id="future-tools" class="products-section">
-            <h2>Coming Soon</h2>
-            <div class="product-list">
-                <div class="product-item upcoming">
-                    <h3>Provable Wallet</h3>
-                    <p>Your personal digital notary for the AI era. Encrypted storage for your digital proofs. Notarized summaries of private proofs: show them in public without losing privacy!</p>
-                    <p>And much more.</p>
-                </div>
-                <div class="product-item upcoming">
-                    <h3>Timestamped Media</h3>
-                    <p>Timestamp images and videos with our Kayros indexer. Demo: "Make Proofs not War"</p>
-                    <a href="https://youtu.be/6sLufsnUMK4?si=rSocRDdGovTUNl9S" target="_blank" class="link">Watch Older Demo →</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="mission" class="notice-section">
-            <p>We are building these tools self-funded. We believe that every human must have a right to evidence, and we offer proof creation as a free service. Features that require storage and more complex computation will require payment.</p>
-        </section>
-
-         <section id="custom" class="notice-section">
-            <p>If you are fighting a proof war (journalist, activist, researcher, citizen, etc.), we want to know your specific needs. Let's work together and build the digital proof layer of society. Contact us: <a href="mailto:contact@mail.provable.dev">contact@mail.provable.dev</a></p>
         </section>
     </main>
 
-    <footer>
-        <p>&nbsp; &copy; 2025 <a href="https://www.kuip.co.uk">Kuip Limited</a></p>
-        <p><a href="https://x.com/is_provable" target="_blank">X | @is_provable</a></p>
-        <p><a href="/privacy/">Privacy</a> | <a href="/terms/">Terms</a></p>
+    <footer class="site-footer">
+        <div class="footer-brand">
+            <img src="/images/provable.png" alt="Provable" class="footer-logo">
+            <p>Infrastructure for evidence, provenance, and high-trust systems.</p>
+        </div>
+        <div class="footer-contact">
+            <p class="footer-title">Contact</p>
+            <div class="footer-links">
+                <a href="https://x.com/is_provable" target="_blank" rel="noreferrer" aria-label="Provable on X">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" class="footer-icon">
+                        <path d="M18.901 1.153h3.68l-8.039 9.188 9.457 12.506H16.594L10.79 15.26l-6.64 7.587H.47l8.598-9.826L0 1.153h7.595l5.247 6.942 6.059-6.942Zm-1.291 19.49h2.039L6.487 3.24H4.3L17.61 20.643Z"></path>
+                    </svg>
+                    <span>@is_provable</span>
+                </a>
+                <a href="mailto:contact@mail.provable.dev">contact@mail.provable.dev</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+            </div>
+        </div>
+        <div class="footer-meta">
+            <a href="https://www.kuip.co.uk" target="_blank" rel="noreferrer">&copy; 2025-present Kuip Limited</a>
+        </div>
     </footer>
+
+    <script>
+        document.querySelectorAll('[data-carousel-target]').forEach((button) => {
+            button.addEventListener('click', () => {
+                const track = document.getElementById(button.dataset.carouselTarget);
+                const direction = Number(button.dataset.direction || 1);
+                if (!track) return;
+                track.scrollBy({ left: track.clientWidth * 0.85 * direction, behavior: 'smooth' });
+            });
+        });
+    </script>
 </body>
 </html>

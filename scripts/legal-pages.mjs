@@ -55,13 +55,38 @@ export function renderLegalHtml({
     <meta name="robots" content="index,follow" />
     <link rel="canonical" href="${escapeHtml(canonicalUrl)}" />
     <style>
+      @font-face {
+        font-family: "Roboto Condensed";
+        src: url("/fonts/RobotoCondensed-Light.woff2") format("woff2");
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Roboto Condensed";
+        src: url("/fonts/RobotoCondensed-Regular.woff2") format("woff2");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Roboto Condensed";
+        src: url("/fonts/RobotoCondensed-Bold.woff2") format("woff2");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+
       :root {
-        --bg: #f5f7fb;
-        --card: #ffffff;
-        --text: #16202a;
-        --muted: #5d6b79;
-        --line: #d7e0ea;
-        --link: #0a5ca8;
+        --bg: #f5f3ee;
+        --card: rgba(255, 255, 255, 0.92);
+        --text: #141b21;
+        --muted: #697581;
+        --line: rgba(20, 27, 33, 0.1);
+        --link: #0b667f;
+        --shadow: 0 24px 64px rgba(17, 24, 31, 0.08);
       }
 
       * {
@@ -70,9 +95,12 @@ export function renderLegalHtml({
 
       body {
         margin: 0;
-        background: radial-gradient(circle at top left, #edf2fb 0%, #f8fafd 40%, var(--bg) 100%);
+        background:
+          radial-gradient(circle at top left, rgba(203, 123, 49, 0.14), transparent 28%),
+          radial-gradient(circle at top right, rgba(11, 102, 127, 0.15), transparent 30%),
+          linear-gradient(180deg, #f5f3ee 0%, #eff3f5 52%, #e9edf1 100%);
         color: var(--text);
-        font: 16px/1.75 "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font: 16px/1.75 "Roboto Condensed", sans-serif;
       }
 
       main {
@@ -82,6 +110,7 @@ export function renderLegalHtml({
         background: var(--card);
         border: 1px solid var(--line);
         border-radius: 14px;
+        box-shadow: var(--shadow);
       }
 
       h1,
@@ -130,6 +159,59 @@ export function renderLegalHtml({
         color: var(--link);
       }
 
+      footer {
+        max-width: 860px;
+        margin: 0 auto 40px;
+        padding: 0 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 24px;
+        color: var(--muted);
+      }
+
+      .contact {
+        display: grid;
+        gap: 8px;
+      }
+
+      .contact-title {
+        margin: 0;
+        color: var(--text);
+        font-size: 0.88rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .contact-links,
+      .copyright {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px 18px;
+      }
+
+      .contact-links a,
+      .copyright a {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--muted);
+        text-decoration: none;
+      }
+
+      .contact-links a:hover,
+      .copyright a:hover {
+        color: var(--text);
+      }
+
+      .icon {
+        width: 14px;
+        height: 14px;
+        fill: currentColor;
+        flex: 0 0 auto;
+      }
+
       @media (max-width: 760px) {
         main {
           margin: 18px;
@@ -139,6 +221,13 @@ export function renderLegalHtml({
         h1 {
           font-size: 1.65rem;
         }
+
+        footer {
+          margin: 0 18px 24px;
+          padding: 0;
+          flex-direction: column;
+          align-items: flex-start;
+        }
       }
     </style>
   </head>
@@ -146,6 +235,25 @@ export function renderLegalHtml({
     <main>
       ${contentHtml}
     </main>
+    <footer>
+      <div class="contact">
+        <p class="contact-title">Contact</p>
+        <div class="contact-links">
+          <a href="https://x.com/is_provable" target="_blank" rel="noreferrer" aria-label="Provable on X">
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
+              <path d="M18.901 1.153h3.68l-8.039 9.188 9.457 12.506H16.594L10.79 15.26l-6.64 7.587H.47l8.598-9.826L0 1.153h7.595l5.247 6.942 6.059-6.942Zm-1.291 19.49h2.039L6.487 3.24H4.3L17.61 20.643Z"></path>
+            </svg>
+            <span>@is_provable</span>
+          </a>
+          <a href="mailto:contact@mail.provable.dev">contact@mail.provable.dev</a>
+          <a href="/privacy/">Privacy</a>
+          <a href="/terms/">Terms</a>
+        </div>
+      </div>
+      <div class="copyright">
+        <a href="https://www.kuip.co.uk" target="_blank" rel="noreferrer">&copy; 2025-present Kuip Limited</a>
+      </div>
+    </footer>
   </body>
 </html>
 `;
