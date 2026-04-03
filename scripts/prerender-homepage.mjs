@@ -67,6 +67,23 @@ function renderProductCard(product) {
   return `<article class="product-card">${body}</article>`;
 }
 
+function renderSlideCard(slide) {
+  const media = slide.videoId
+    ? renderVideoEmbed(slide.videoId, slide.title)
+    : slide.imageUrl
+      ? renderImageMedia(slide.imageUrl, slide.title)
+      : renderPlaceholder(slide.kicker, "/images/kayros.png");
+
+  return `<article class="slide-card${slide.videoId ? " slide-card--video" : ""}">
+    <div class="slide-card__media">
+      ${media}
+    </div>
+    <p class="slide-card__kicker">${escapeHtml(slide.kicker)}</p>
+    <h2>${escapeHtml(slide.title)}</h2>
+    <p>${escapeHtml(slide.body)}</p>
+  </article>`;
+}
+
 function renderHtml() {
   const visibleKayros = kayrosSlides.slice(0, Math.min(2, kayrosSlides.length));
   const workflow = workflows[0];
@@ -113,23 +130,7 @@ function renderHtml() {
           <div class="slider__viewport slider__viewport--pair">
             ${visibleKayros
               .map((slide) =>
-                `<div class="slider__item">${
-                  slide.videoId
-                    ? `<article class="slide-card slide-card--video">
-                        ${renderVideoEmbed(slide.videoId, slide.title)}
-                        <p class="slide-card__kicker">${escapeHtml(slide.kicker)}</p>
-                        <h2>${escapeHtml(slide.title)}</h2>
-                        <p>${escapeHtml(slide.body)}</p>
-                      </article>`
-                    : `<article class="slide-card">
-                        <div class="slide-card__media">
-                          ${renderPlaceholder(slide.kicker, "/images/kayros.png")}
-                        </div>
-                        <p class="slide-card__kicker">${escapeHtml(slide.kicker)}</p>
-                        <h2>${escapeHtml(slide.title)}</h2>
-                        <p>${escapeHtml(slide.body)}</p>
-                      </article>`
-                }</div>`
+                `<div class="slider__item">${renderSlideCard(slide)}</div>`
               )
               .join("")}
           </div>

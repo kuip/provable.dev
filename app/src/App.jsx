@@ -272,6 +272,15 @@ export function App() {
                   <h2>{slide.title}</h2>
                   <p>{slide.body}</p>
                 </article>
+              ) : slide.imageUrl ? (
+                <article className="slide-card">
+                  <div className="slide-card__media">
+                    <ImageMedia imageUrl={slide.imageUrl} title={slide.title} />
+                  </div>
+                  <p className="slide-card__kicker">{slide.kicker}</p>
+                  <h2>{slide.title}</h2>
+                  <p>{slide.body}</p>
+                </article>
               ) : (
                 <article className="slide-card">
                   <div className="slide-card__media">

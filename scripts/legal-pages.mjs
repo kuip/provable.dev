@@ -54,13 +54,16 @@ export function renderLegalHtml({
     <meta name="description" content="${escapeHtml(description)}" />
     <meta name="robots" content="index,follow" />
     <link rel="canonical" href="${escapeHtml(canonicalUrl)}" />
+    <link rel="preload" href="/fonts/RobotoCondensed-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/RobotoCondensed-Bold.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/RobotoCondensed-Light.woff2" as="font" type="font/woff2" crossorigin />
     <style>
       @font-face {
         font-family: "Roboto Condensed";
         src: url("/fonts/RobotoCondensed-Light.woff2") format("woff2");
         font-weight: 300;
         font-style: normal;
-        font-display: swap;
+        font-display: block;
       }
 
       @font-face {
@@ -68,7 +71,7 @@ export function renderLegalHtml({
         src: url("/fonts/RobotoCondensed-Regular.woff2") format("woff2");
         font-weight: 400;
         font-style: normal;
-        font-display: swap;
+        font-display: block;
       }
 
       @font-face {
@@ -76,17 +79,30 @@ export function renderLegalHtml({
         src: url("/fonts/RobotoCondensed-Bold.woff2") format("woff2");
         font-weight: 700;
         font-style: normal;
-        font-display: swap;
+        font-display: block;
       }
 
       :root {
-        --bg: #f5f3ee;
+        color-scheme: light dark;
+        --bg: #f2f5f7;
         --card: rgba(255, 255, 255, 0.92);
         --text: #141b21;
         --muted: #697581;
         --line: rgba(20, 27, 33, 0.1);
         --link: #0b667f;
         --shadow: 0 24px 64px rgba(17, 24, 31, 0.08);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #141b20;
+          --card: rgba(19, 27, 33, 0.94);
+          --text: #ecf2f6;
+          --muted: #97a6b1;
+          --line: rgba(236, 242, 246, 0.1);
+          --link: #67b6cd;
+          --shadow: 0 24px 64px rgba(0, 0, 0, 0.28);
+        }
       }
 
       * {
@@ -96,11 +112,11 @@ export function renderLegalHtml({
       body {
         margin: 0;
         background:
-          radial-gradient(circle at top left, rgba(203, 123, 49, 0.14), transparent 28%),
+          radial-gradient(circle at top left, rgba(124, 138, 149, 0.14), transparent 28%),
           radial-gradient(circle at top right, rgba(11, 102, 127, 0.15), transparent 30%),
-          linear-gradient(180deg, #f5f3ee 0%, #eff3f5 52%, #e9edf1 100%);
+          linear-gradient(180deg, #f2f5f7 0%, #edf2f5 52%, #e6ecef 100%);
         color: var(--text);
-        font: 16px/1.75 "Roboto Condensed", sans-serif;
+        font: 16px/1.75 "Roboto Condensed", "Arial Narrow", "Liberation Sans Narrow", "Nimbus Sans Narrow", sans-serif;
       }
 
       main {
@@ -148,8 +164,8 @@ export function renderLegalHtml({
       }
 
       code {
-        background: #eef4fb;
-        border: 1px solid #d5e2ef;
+        background: color-mix(in srgb, var(--link) 10%, transparent);
+        border: 1px solid color-mix(in srgb, var(--link) 18%, var(--line));
         border-radius: 4px;
         padding: 0.1rem 0.3rem;
         font-size: 0.9em;

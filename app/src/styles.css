@@ -3,7 +3,7 @@
   src: url("/fonts/RobotoCondensed-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
@@ -11,7 +11,7 @@
   src: url("/fonts/RobotoCondensed-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
@@ -19,19 +19,60 @@
   src: url("/fonts/RobotoCondensed-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 :root {
+  color-scheme: light dark;
   --ink: #141b21;
-  --text: #2a3440;
-  --muted: #687480;
+  --text: #22303b;
+  --muted: #60717d;
   --line: rgba(20, 27, 33, 0.1);
-  --panel: rgba(255, 255, 255, 0.88);
+  --line-strong: rgba(20, 27, 33, 0.16);
+  --bg-top: #f2f5f7;
+  --bg-mid: #ebf0f3;
+  --bg-bottom: #e4eaee;
+  --panel: rgba(255, 255, 255, 0.82);
   --panel-strong: rgba(255, 255, 255, 0.94);
-  --warm: #cb7b31;
+  --panel-soft: rgba(250, 252, 253, 0.92);
+  --warm: #6f7f89;
   --cool: #0b667f;
-  --shadow: 0 24px 64px rgba(17, 24, 31, 0.08);
+  --button-bg: rgba(255, 255, 255, 0.84);
+  --button-bg-strong: rgba(255, 255, 255, 0.92);
+  --shadow: 0 20px 52px rgba(17, 24, 31, 0.08);
+  --shadow-soft: 0 10px 28px rgba(17, 24, 31, 0.05);
+  --placeholder-a: rgba(124, 138, 149, 0.16);
+  --placeholder-b: rgba(11, 102, 127, 0.16);
+  --placeholder-base: rgba(255, 255, 255, 0.64);
+  --placeholder-surface-a: #f8fafb;
+  --placeholder-surface-b: #e8eef2;
+  --placeholder-text: #18242d;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #f4f7fa;
+    --text: #d7e0e7;
+    --muted: #93a3af;
+    --line: rgba(226, 234, 241, 0.1);
+    --line-strong: rgba(226, 234, 241, 0.18);
+    --bg-top: #0f1418;
+    --bg-mid: #131c22;
+    --bg-bottom: #182128;
+    --panel: rgba(20, 28, 34, 0.8);
+    --panel-strong: rgba(17, 24, 29, 0.94);
+    --panel-soft: rgba(24, 33, 40, 0.92);
+    --button-bg: rgba(24, 33, 40, 0.92);
+    --button-bg-strong: rgba(31, 42, 50, 0.96);
+    --shadow: 0 24px 64px rgba(0, 0, 0, 0.28);
+    --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.22);
+    --placeholder-a: rgba(124, 138, 149, 0.18);
+    --placeholder-b: rgba(11, 102, 127, 0.2);
+    --placeholder-base: rgba(255, 255, 255, 0.06);
+    --placeholder-surface-a: #172028;
+    --placeholder-surface-b: #0f171d;
+    --placeholder-text: #f4f7fa;
+  }
 }
 
 * {
@@ -44,12 +85,12 @@ html {
 
 body {
   margin: 0;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Roboto Condensed", "Arial Narrow", "Liberation Sans Narrow", "Nimbus Sans Narrow", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, rgba(203, 123, 49, 0.14), transparent 28%),
-    radial-gradient(circle at top right, rgba(11, 102, 127, 0.15), transparent 30%),
-    linear-gradient(180deg, #f5f3ee 0%, #eff3f5 52%, #e9edf1 100%);
+    radial-gradient(circle at top left, color-mix(in srgb, var(--warm) 16%, transparent), transparent 28%),
+    radial-gradient(circle at top right, color-mix(in srgb, var(--cool) 18%, transparent), transparent 32%),
+    linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 52%, var(--bg-bottom) 100%);
 }
 
 a {
@@ -85,8 +126,9 @@ img {
   padding: 14px 18px;
   border: 1px solid var(--line);
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.74);
+  background: color-mix(in srgb, var(--panel-strong) 84%, transparent);
   backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-soft);
 }
 
 .brand {
@@ -125,10 +167,11 @@ img {
 
 .topnav__cta {
   padding: 10px 14px;
-  border: 1px solid rgba(20, 27, 33, 0.14);
+  border: 1px solid var(--line-strong);
   border-radius: 999px;
   color: var(--ink) !important;
   font-weight: 700;
+  background: var(--button-bg);
 }
 
 .panel {
@@ -205,8 +248,8 @@ img {
   min-height: 40px;
   padding: 0 14px;
   border-radius: 999px;
-  border: 1px solid rgba(20, 27, 33, 0.1);
-  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid var(--line);
+  background: var(--panel-soft);
   color: var(--ink);
   font-weight: 700;
 }
@@ -239,9 +282,9 @@ img {
 .slider__button {
   width: 42px;
   height: 42px;
-  border: 1px solid rgba(20, 27, 33, 0.14);
+  border: 1px solid var(--line-strong);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.82);
+  background: var(--button-bg);
   color: var(--ink);
   font: inherit;
   font-size: 1.4rem;
@@ -268,11 +311,13 @@ img {
   grid-template-rows: auto auto auto 1fr;
   align-content: start;
   gap: 14px;
+  min-height: clamp(25rem, 30vw, 28rem);
   height: 100%;
   padding: 20px;
   border: 1px solid var(--line);
   border-radius: 24px;
   background: var(--panel-strong);
+  box-shadow: var(--shadow-soft);
 }
 
 .slide-card__kicker {
@@ -305,8 +350,9 @@ img {
 .media-image-frame {
   overflow: hidden;
   border-radius: 18px;
-  background: #e8edf1;
+  background: color-mix(in srgb, var(--panel-soft) 88%, transparent);
   aspect-ratio: 16 / 9;
+  border: 1px solid var(--line);
 }
 
 .media-image-frame img {
@@ -343,7 +389,7 @@ img {
   place-items: center;
   transform: translate(-50%, -50%);
   border-radius: 999px;
-  background: rgba(20, 27, 33, 0.76);
+  background: rgba(20, 27, 33, 0.72);
   color: #fff;
   font-size: 1.4rem;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.26);
@@ -373,21 +419,21 @@ img {
 
 .workflow-tab {
   padding: 13px 18px;
-  border: 1px solid rgba(20, 27, 33, 0.12);
+  border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.92);
+  background: var(--button-bg);
   color: var(--muted);
   font: inherit;
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 8px 18px rgba(17, 24, 31, 0.05);
+  box-shadow: var(--shadow-soft);
 }
 
 .workflow-tab.is-active {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: #fff;
+  background: color-mix(in srgb, var(--ink) 92%, transparent);
+  border-color: color-mix(in srgb, var(--ink) 70%, var(--line));
+  color: var(--panel-strong);
 }
 
 .workflow-panel {
@@ -410,7 +456,7 @@ img {
 
 .workflow-panel__quote {
   padding-left: 16px;
-  border-left: 3px solid rgba(203, 123, 49, 0.6);
+  border-left: 3px solid color-mix(in srgb, var(--warm) 72%, transparent);
   color: var(--ink) !important;
 }
 
@@ -450,12 +496,17 @@ img {
   border-radius: 18px;
   aspect-ratio: 16 / 9;
   background:
-    radial-gradient(circle at top left, rgba(203, 123, 49, 0.18), transparent 34%),
-    radial-gradient(circle at bottom right, rgba(11, 102, 127, 0.18), transparent 38%),
-    linear-gradient(160deg, rgba(20, 27, 33, 0.96), rgba(27, 42, 52, 0.94));
-  color: #f5f7fa;
+    radial-gradient(circle at top left, var(--placeholder-a), transparent 34%),
+    radial-gradient(circle at bottom right, var(--placeholder-b), transparent 38%),
+    linear-gradient(
+      160deg,
+      color-mix(in srgb, var(--placeholder-surface-a) 92%, var(--placeholder-base)),
+      color-mix(in srgb, var(--placeholder-surface-b) 86%, var(--placeholder-base))
+    );
+  color: var(--placeholder-text);
   text-align: center;
   padding: 18px;
+  border: 1px solid color-mix(in srgb, var(--line-strong) 72%, transparent);
 }
 
 .card-placeholder span {
@@ -482,7 +533,7 @@ img {
 }
 
 .product-card--link:hover {
-  border-color: rgba(11, 102, 127, 0.28);
+  border-color: color-mix(in srgb, var(--cool) 40%, var(--line));
   transform: translateY(-2px);
 }
 
@@ -500,7 +551,8 @@ img {
   padding: 18px 20px;
   border: 1px solid var(--line);
   border-radius: 22px;
-  background: rgba(255, 255, 255, 0.74);
+  background: var(--panel-soft);
+  box-shadow: var(--shadow-soft);
 }
 
 .ethos__card p {
@@ -600,6 +652,11 @@ img {
 
   .panel {
     padding: 22px;
+  }
+
+  .slide-card,
+  .product-card {
+    min-height: 24rem;
   }
 
   .hero h1 {
