@@ -15,27 +15,17 @@ const ROOT = path.resolve(__dirname, "..");
 const DIST = path.join(ROOT, "dist");
 
 const STATIC_FILES = [
-  "CNAME",
   "LICENSE",
-  "PrivacyPolicy.html",
   "_config.yml",
-  "android-chrome-192x192.png",
-  "android-chrome-512x512.png",
-  "apple-touch-icon.png",
-  "favicon-16x16.png",
-  "favicon-32x32.png",
   "index.html",
   "proof.html",
   "robots.txt",
   "site.webmanifest",
   "sitemap.xml",
-  "styles.css",
-  "RobotoCondensed-Bold.woff2",
-  "RobotoCondensed-Light.woff2",
-  "RobotoCondensed-Regular.woff2"
+  "styles.css"
 ];
 
-const STATIC_DIRS = ["fonts", "images", "medals"];
+const STATIC_DIRS = ["public", "medals"];
 
 async function exists(relativePath) {
   try {
@@ -57,15 +47,38 @@ async function copyIfExists(relativePath) {
   await fs.cp(from, to, { recursive: true });
 }
 
+async function copyPublicDir() {
+  const from = path.join(ROOT, "public");
+  if (!(await exists("public"))) {
+    return;
+  }
+
+  await fs.cp(from, DIST, { recursive: true });
+}
+
+async function removeIfExists(relativePath) {
+  const target = path.join(ROOT, relativePath);
+  try {
+    await fs.rm(target, { force: true });
+  } catch {
+    // Ignore missing files in generated output.
+  }
+}
+
 async function buildSite() {
   await fs.rm(DIST, { recursive: true, force: true });
   await fs.mkdir(DIST, { recursive: true });
+
+  await copyPublicDir();
 
   for (const file of STATIC_FILES) {
     await copyIfExists(file);
   }
 
   for (const dir of STATIC_DIRS) {
+    if (dir === "public") {
+      continue;
+    }
     await copyIfExists(dir);
   }
 
@@ -85,6 +98,7 @@ async function buildSite() {
     );
   }
 
+  await removeIfExists("dist/.DS_Store");
   await fs.writeFile(path.join(DIST, ".nojekyll"), "", "utf8");
 }
 

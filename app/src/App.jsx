@@ -16,10 +16,10 @@ export function App() {
             <a href="/proof.html">Proof page (existing static page)</a>
           </li>
           <li>
-            <a href="/privacy_oliver/">Privacy Policy (generated from markdown)</a>
+            <a href="/privacy/">Privacy Policy (generated from markdown)</a>
           </li>
           <li>
-            <a href="/terms_oliver/">Terms of Use (generated from markdown)</a>
+            <a href="/terms/">Terms of Use (generated from markdown)</a>
           </li>
         </ul>
       </section>

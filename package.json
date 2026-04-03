@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "npm run build:site && npm run build:app",
+    "build": "npm run build:site && npm run build:app && find dist -name .DS_Store -delete",
     "build:site": "node scripts/build-site.mjs",
     "build:app": "vite build",
     "dev": "vite",

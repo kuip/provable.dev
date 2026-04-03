@@ -4,16 +4,16 @@ export const SITE_ORIGIN = process.env.SITE_ORIGIN || "https://provable.dev";
 
 export const LEGAL_PAGES = [
   {
-    slug: "privacy_oliver",
-    source: "legal/policy_oliver.md",
-    title: "Privacy Policy for Oliver",
-    description: "Privacy Policy for Oliver by Kuip Limited, Ireland."
+    slug: "privacy",
+    source: "public/PrivacyPolicy.md",
+    title: "Privacy Policy",
+    description: "Privacy policy for provable.dev."
   },
   {
-    slug: "terms_oliver",
-    source: "legal/terms_oliver.md",
-    title: "Terms of Use for Oliver",
-    description: "Terms of Use for Oliver by Kuip Limited, Ireland."
+    slug: "terms",
+    source: "public/Terms.md",
+    title: "Terms of Use",
+    description: "Terms of use for provable.dev."
   }
 ];
 

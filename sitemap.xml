@@ -7,26 +7,20 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://provable.dev/PrivacyPolicy.html</loc>
-    <lastmod>2025-10-10</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
     <loc>https://provable.dev/medals/</loc>
     <lastmod>2025-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://provable.dev/privacy_oliver/</loc>
-    <lastmod>2026-02-18</lastmod>
+    <loc>https://provable.dev/privacy/</loc>
+    <lastmod>2026-04-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://provable.dev/terms_oliver/</loc>
-    <lastmod>2026-02-18</lastmod>
+    <loc>https://provable.dev/terms/</loc>
+    <lastmod>2026-04-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
