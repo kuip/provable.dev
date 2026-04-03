@@ -90,18 +90,18 @@ export function renderLegalHtml({
         --muted: #697581;
         --line: rgba(20, 27, 33, 0.1);
         --link: #5a6f81;
-        --shadow: 0 18px 44px rgba(17, 24, 31, 0.06);
+        --shadow: 0 10px 24px rgba(17, 24, 31, 0.04);
       }
 
       @media (prefers-color-scheme: dark) {
         :root {
-          --bg: #10151a;
-          --card: rgba(19, 25, 31, 0.98);
-          --text: #ecf2f6;
-          --muted: #97a6b1;
-          --line: rgba(236, 242, 246, 0.1);
-          --link: #93a6b5;
-          --shadow: 0 20px 44px rgba(0, 0, 0, 0.22);
+          --bg: #181a1c;
+          --card: #22262a;
+          --text: #e4e8ea;
+          --muted: #9ea4a8;
+          --line: rgba(238, 241, 242, 0.05);
+          --link: #b3b8bc;
+          --shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
         }
       }
 
@@ -193,8 +193,7 @@ export function renderLegalHtml({
         color: var(--text);
         font-size: 0.88rem;
         font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
+        letter-spacing: 0.03em;
       }
 
       .contact-links,

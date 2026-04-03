@@ -218,20 +218,24 @@ export function App() {
   return (
     <>
       <main className="site-shell">
-        <header className="topbar">
-          <a href="/" className="brand" aria-label="Provable">
+        <div className="masthead">
+          <a href="/" className="brand brand--logo-only" aria-label="Provable">
             <img src="/images/provable.png" alt="Provable" className="brand__logo" />
-            <span className="brand__name">Provable</span>
           </a>
-          <nav className="topnav" aria-label="Primary">
-            <a href="#kayros">Kayros</a>
-            <a href="#workflows">Use Cases</a>
-            <a href="#ethos">Ethos</a>
-            <a href="/proof.html" className="topnav__cta">
-              Verify a proof
-            </a>
-          </nav>
-        </header>
+          <header className="topbar">
+            <nav className="topnav" aria-label="Primary">
+              <a href="/" className="brand brand--inline" aria-label="Provable">
+                <span className="brand__name">provable</span>
+              </a>
+              <a href="#kayros">Kayros</a>
+              <a href="#workflows">Use Cases</a>
+              <a href="#ethos">Ethos</a>
+              <a href="/proof.html" className="topnav__cta">
+                Verify a proof
+              </a>
+            </nav>
+          </header>
+        </div>
 
         <section id="kayros" className="panel hero">
           <div className="hero__copy">

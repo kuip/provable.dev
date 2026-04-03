@@ -294,6 +294,6 @@ export const workflows = [
 
 export const ethos = [
   "Tools for a provable new world",
-  "The right to evidence must be a human right.",
+  "The right to evidence must be a basic human right.",
   "Proofs are more important than money."
 ];

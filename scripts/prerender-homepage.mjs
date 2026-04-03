@@ -91,18 +91,22 @@ function renderHtml() {
 
   return `
     <main class="site-shell">
-      <header class="topbar">
-        <a href="/" class="brand" aria-label="Provable">
+      <div class="masthead">
+        <a href="/" class="brand brand--logo-only" aria-label="Provable">
           <img src="/images/provable.png" alt="Provable" class="brand__logo" />
-          <span class="brand__name">Provable</span>
         </a>
-        <nav class="topnav" aria-label="Primary">
-          <a href="#kayros">Kayros</a>
-          <a href="#workflows">Use Cases</a>
-          <a href="#ethos">Ethos</a>
-          <a href="/proof.html" class="topnav__cta">Verify a proof</a>
-        </nav>
-      </header>
+        <header class="topbar">
+          <nav class="topnav" aria-label="Primary">
+            <a href="/" class="brand brand--inline" aria-label="Provable">
+              <span class="brand__name">provable</span>
+            </a>
+            <a href="#kayros">Kayros</a>
+            <a href="#workflows">Use Cases</a>
+            <a href="#ethos">Ethos</a>
+            <a href="/proof.html" class="topnav__cta">Verify a proof</a>
+          </nav>
+        </header>
+      </div>
 
       <section id="kayros" class="panel hero">
         <div class="hero__copy">
