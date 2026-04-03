@@ -4,9 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "npm run build:site && npm run build:app && find dist -name .DS_Store -delete",
+    "build": "npm run build:site && npm run build:app && npm run build:prerender && find dist -name .DS_Store -delete",
     "build:site": "node scripts/build-site.mjs",
     "build:app": "vite build",
+    "build:prerender": "node scripts/prerender-homepage.mjs",
     "dev": "vite",
     "preview": "vite preview"
   },
