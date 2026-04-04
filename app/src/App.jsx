@@ -10,6 +10,31 @@ function workflowHref(id) {
   return `#workflows-${id}`;
 }
 
+function useMediaQuery(query) {
+  const getMatches = () =>
+    typeof window !== "undefined" ? window.matchMedia(query).matches : false;
+
+  const [matches, setMatches] = useState(getMatches);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return undefined;
+    }
+
+    const mediaQuery = window.matchMedia(query);
+    const onChange = () => setMatches(mediaQuery.matches);
+
+    onChange();
+    mediaQuery.addEventListener("change", onChange);
+
+    return () => {
+      mediaQuery.removeEventListener("change", onChange);
+    };
+  }, [query]);
+
+  return matches;
+}
+
 function VideoEmbed({ videoId, title }) {
   const [loaded, setLoaded] = useState(false);
 
@@ -133,12 +158,11 @@ function CarouselPair({
   onPrev,
   onNext,
   renderItem,
-  label
+  label,
+  itemsPerView = 2
 }) {
-  const visible = [
-    items[index],
-    items[(index + 1) % items.length]
-  ];
+  const visibleCount = Math.min(itemsPerView, items.length);
+  const visible = Array.from({ length: visibleCount }, (_, visibleIndex) => items[(index + visibleIndex) % items.length]);
   const endIndex = ((index + visible.length - 1) % items.length) + 1;
   const safeCountLabel =
     items.length > 1 ? `${index + 1}-${endIndex} / ${items.length}` : `1 / 1`;
@@ -173,6 +197,7 @@ export function App() {
   const [productIndexes, setProductIndexes] = useState(() =>
     Object.fromEntries(workflows.map((workflow) => [workflow.id, 0]))
   );
+  const showSingleCard = useMediaQuery("(max-width: 1100px)");
 
   const activeWorkflow = useMemo(
     () => workflows.find((workflow) => workflow.id === workflowId) ?? workflows[0],
@@ -268,6 +293,7 @@ export function App() {
             onPrev={() => setKayrosIndex((current) => cycle(kayrosSlides.length, current, -1))}
             onNext={() => setKayrosIndex((current) => cycle(kayrosSlides.length, current, 1))}
             label="Kayros slide"
+            itemsPerView={showSingleCard ? 1 : 2}
             renderItem={(slide) =>
               slide.videoId ? (
                 <article className="slide-card slide-card--video">
@@ -337,6 +363,7 @@ export function App() {
               onPrev={() => setProductIndex(activeWorkflow.id, -1)}
               onNext={() => setProductIndex(activeWorkflow.id, 1)}
               label={`${activeWorkflow.label} product`}
+              itemsPerView={showSingleCard ? 1 : 2}
               renderItem={(product) => <ProductCard product={product} />}
             />
           </div>
