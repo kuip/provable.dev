@@ -78,7 +78,6 @@ function renderSlideCard(slide) {
     <div class="slide-card__media">
       ${media}
     </div>
-    <p class="slide-card__kicker">${escapeHtml(slide.kicker)}</p>
     <h2>${escapeHtml(slide.title)}</h2>
     <p>${escapeHtml(slide.body)}</p>
   </article>`;

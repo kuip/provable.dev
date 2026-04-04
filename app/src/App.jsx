@@ -272,7 +272,6 @@ export function App() {
               slide.videoId ? (
                 <article className="slide-card slide-card--video">
                   <VideoEmbed videoId={slide.videoId} title={slide.title} />
-                  <p className="slide-card__kicker">{slide.kicker}</p>
                   <h2>{slide.title}</h2>
                   <p>{slide.body}</p>
                 </article>
@@ -281,7 +280,6 @@ export function App() {
                   <div className="slide-card__media">
                     <ImageMedia imageUrl={slide.imageUrl} title={slide.title} />
                   </div>
-                  <p className="slide-card__kicker">{slide.kicker}</p>
                   <h2>{slide.title}</h2>
                   <p>{slide.body}</p>
                 </article>
@@ -290,7 +288,6 @@ export function App() {
                   <div className="slide-card__media">
                     <MediaPlaceholder label={slide.kicker} logo="/images/kayros.png" />
                   </div>
-                  <p className="slide-card__kicker">{slide.kicker}</p>
                   <h2>{slide.title}</h2>
                   <p>{slide.body}</p>
                 </article>
