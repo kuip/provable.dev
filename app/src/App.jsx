@@ -254,7 +254,6 @@ export function App() {
               </a>
               <a href="#kayros">Kayros</a>
               <a href="#workflows">Use Cases</a>
-              <a href="#ethos">Ethos</a>
               <a href="/proof.html" className="topnav__cta">
                 Verify a proof
               </a>
@@ -369,21 +368,20 @@ export function App() {
           </div>
         </section>
 
-        <section id="ethos" className="panel ethos">
-          <div className="ethos__grid">
-            {ethos.map((statement) => (
-              <article key={statement} className="ethos__card">
-                <p>{statement}</p>
-              </article>
-            ))}
-          </div>
-        </section>
       </main>
 
       <footer className="site-footer">
         <div className="site-footer__brand">
-          <img src="/images/provable.png" alt="Provable" className="site-footer__logo" />
-          <p>Infrastructure for evidence, provenance, and high-trust systems.</p>
+          <div className="site-footer__brand-row">
+            <img src="/images/provable.png" alt="Provable" className="site-footer__logo" />
+            <p>Infrastructure for evidence, provenance, and high-trust systems.</p>
+          </div>
+          <p className="site-footer__title">Motto</p>
+          <div className="site-footer__motto-lines">
+            {ethos.map((statement) => (
+              <p key={statement}>{statement}</p>
+            ))}
+          </div>
         </div>
 
         <div className="site-footer__contact">
@@ -396,15 +394,16 @@ export function App() {
               <span>@is_provable</span>
             </a>
             <a href="mailto:contact@mail.provable.dev">contact@mail.provable.dev</a>
-            <a href="/privacy/">Privacy</a>
-            <a href="/terms/">Terms</a>
           </div>
         </div>
 
-        <div className="site-footer__meta">
+        <div className="site-footer__legal">
+          <p className="site-footer__title">Legal</p>
           <a href="https://www.kuip.co.uk" target="_blank" rel="noreferrer">
             &copy; 2025-present Kuip Limited
           </a>
+          <a href="/privacy/">Privacy</a>
+          <a href="/terms/">Terms</a>
         </div>
       </footer>
     </>

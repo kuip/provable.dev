@@ -48,6 +48,13 @@ const visionProducts = [
 
 const industryProducts = [
   {
+    name: "Carpe!",
+    logo: "/images/carpe.png",
+    description:
+      "Carpe! Tamper-evident data ingestion from BLE devices at database record level",
+    videoId: "u4pYbgu3GVY",
+  },
+  {
     name: "Oliver for RWA",
     logo: "/images/oliver.png",
     description:
@@ -141,6 +148,13 @@ const blockchainProducts = [
 ];
 
 export const allProducts = [
+  {
+    name: "Carpe!",
+    logo: "/images/carpe.png",
+    description:
+      "Carpe! Tamper-evident data ingestion from BLE devices at database record level",
+    videoId: "u4pYbgu3GVY",
+  },
   {
     name: "Oliver",
     logo: "/images/oliver.png",
@@ -295,5 +309,5 @@ export const workflows = [
 export const ethos = [
   "Tools for a provable new world",
   "The right to evidence must be a basic human right.",
-  "Proofs are more important than money."
+  "Every kairos is a chronos, but not every chronos is a kairos (Hippocrates of Kos)",
 ];

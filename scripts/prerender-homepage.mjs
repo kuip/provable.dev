@@ -101,7 +101,6 @@ function renderHtml() {
             </a>
             <a href="#kayros">Kayros</a>
             <a href="#workflows">Use Cases</a>
-            <a href="#ethos">Ethos</a>
             <a href="/proof.html" class="topnav__cta">Verify a proof</a>
           </nav>
         </header>
@@ -178,17 +177,18 @@ function renderHtml() {
         </div>
       </section>
 
-      <section id="ethos" class="panel ethos">
-        <div class="ethos__grid">
-          ${ethos.map((line) => `<article class="ethos__card"><p>${escapeHtml(line)}</p></article>`).join("")}
-        </div>
-      </section>
     </main>
 
     <footer class="site-footer">
       <div class="site-footer__brand">
-        <img src="/images/provable.png" alt="Provable" class="site-footer__logo" />
-        <p>Infrastructure for evidence, provenance, and high-trust systems.</p>
+        <div class="site-footer__brand-row">
+          <img src="/images/provable.png" alt="Provable" class="site-footer__logo" />
+          <p>Infrastructure for evidence, provenance, and high-trust systems.</p>
+        </div>
+        <p class="site-footer__title">Motto</p>
+        <div class="site-footer__motto-lines">
+          ${ethos.map((line) => `<p>${escapeHtml(line)}</p>`).join("")}
+        </div>
       </div>
       <div class="site-footer__contact">
         <p class="site-footer__title">Contact</p>
@@ -200,12 +200,13 @@ function renderHtml() {
             <span>@is_provable</span>
           </a>
           <a href="mailto:contact@mail.provable.dev">contact@mail.provable.dev</a>
-          <a href="/privacy/">Privacy</a>
-          <a href="/terms/">Terms</a>
         </div>
       </div>
-      <div class="site-footer__meta">
+      <div class="site-footer__legal">
+        <p class="site-footer__title">Legal</p>
         <a href="https://www.kuip.co.uk" target="_blank" rel="noreferrer">&copy; 2025-present Kuip Limited</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
       </div>
     </footer>
   `;
