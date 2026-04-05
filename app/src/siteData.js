@@ -27,7 +27,7 @@ const visionProducts = [
     name: "Oliver",
     logo: "/images/oliver.png",
     description:
-      "Frame-level video notarization and authentication for visual evidence pipelines.",
+      "Frame-level cryptographic integrity and authentication for visual evidence pipelines.",
     videoId: "jQGVPddBclc",
     href: "https://oliver.provable.dev"
   },
@@ -35,13 +35,13 @@ const visionProducts = [
     name: "Carpe!",
     logo: "/images/carpe.png",
     description:
-      "Record-level database notarization for every record insert and update, ordered on a global timeline.",
+      "Record-level cryptographic integrity for every database insert and update, ordered on a global timeline.",
     videoId: "EuwNDeDu9Ao"
   },
   {
     name: "Provable SDK",
     description:
-      "TypeScript, Python, and Golang packages for notarizing critical APIs and machine-event pipelines.",
+      "Open-source SDKs for adding cryptographic integrity to critical APIs and systems.",
     href: "https://github.com/kuip/provable-sdk"
   }
 ];
@@ -58,7 +58,7 @@ const industryProducts = [
     name: "Oliver for RWA",
     logo: "/images/oliver.png",
     description:
-      "Notarization for physical assets and tags across logistics, custody, and verification workflows. QRcodes, barcodes, NFC/RFID, BLE Tags.",
+      "Tamper-evident traceability for physical assets and tags across logistics, custody, and verification workflows. QRcodes, barcodes, NFC/RFID, BLE Tags.",
     videoId: "5U1kOKrBDts",
     href: "https://oliver.provable.dev"
   },
@@ -66,13 +66,13 @@ const industryProducts = [
     name: "Carpe!",
     logo: "/images/carpe.png",
     description:
-      "Record-level database notarization for every record insert and update, ordered on a global timeline.",
+      "Record-level cryptographic integrity for every database insert and update, ordered on a global timeline.",
     videoId: "EuwNDeDu9Ao"
   },
   {
     name: "Provable SDK",
     description:
-      "TypeScript, Python, and Golang packages for notarizing critical APIs and machine-event pipelines.",
+      "Open-source SDKs for adding cryptographic integrity to critical APIs and systems.",
     href: "https://github.com/kuip/provable-sdk"
   }
 ];
@@ -82,7 +82,7 @@ const commsProducts = [
     name: "Veritas",
     logo: "/images/veritas.png",
     description:
-      "A secure, fully notarized folder that captures file changes and document history. Compatible with Google Drive and LibreOffice.",
+      "A tamper-evident folder that captures file changes and document history with a cryptographic proof of integrity. Compatible with Google Drive and LibreOffice.",
     videoId: "8VEWngK8S7E"
   },
   {
@@ -102,12 +102,12 @@ const commsProducts = [
   {
     name: "Provable Email",
     description:
-      "Notarize emails by adding kayros1@dmail.provable.dev as To, Cc, or Bcc and receive a cryptographic proof. Prove institutional and gov contact."
+      "Transform your email into evidence by adding kayros1@dmail.provable.dev as To, Cc, or Bcc and receive a cryptographic proof. So you can publicly prove institutional contact."
   },
   {
     name: "Provable SDK",
     description:
-      "SDKs for adding notarization to communication platforms, editorial workflows, and critical APIs.",
+      "Open-source SDKs for adding cryptographic integrity to critical APIs and systems.",
     href: "https://github.com/kuip/provable-sdk"
   },
   {
@@ -159,7 +159,7 @@ export const allProducts = [
     name: "Oliver",
     logo: "/images/oliver.png",
     description:
-      "Frame-level video notarization and authentication for visual evidence pipelines.",
+      "Frame-level cryptographic integrity and authentication for visual evidence pipelines.",
     videoId: "jQGVPddBclc",
     href: "https://oliver.provable.dev"
   },
@@ -167,7 +167,7 @@ export const allProducts = [
     name: "Oliver for RWA",
     logo: "/images/oliver.png",
     description:
-      "Notarization for physical assets and tags across logistics, custody, and verification workflows. QRcodes, barcodes, NFC/RFID, BLE Tags.",
+      "Tamper-evident traceability for physical assets and tags across logistics, custody, and verification workflows. QRcodes, barcodes, NFC/RFID, BLE Tags.",
     videoId: "5U1kOKrBDts",
     href: "https://oliver.provable.dev"
   },
@@ -175,14 +175,14 @@ export const allProducts = [
     name: "Carpe!",
     logo: "/images/carpe.png",
     description:
-      "Record-level database notarization for every record insert and update, ordered on a global timeline.",
+      "Record-level cryptographic integrity for every database insert and update, ordered on a global timeline.",
     videoId: "EuwNDeDu9Ao"
   },
   {
     name: "Veritas",
     logo: "/images/veritas.png",
     description:
-       "A secure, fully notarized folder that captures file changes and document history. Compatible with Google Drive and LibreOffice.",
+      "A tamper-evident folder that captures file changes and document history with a cryptographic proof of integrity. Compatible with Google Drive and LibreOffice.",
     videoId: "8VEWngK8S7E"
   },
   {
@@ -202,12 +202,12 @@ export const allProducts = [
   {
     name: "Provable Email",
     description:
-      "Notarize emails by adding kayros1@dmail.provable.dev as To, Cc, or Bcc and receive a cryptographic proof. Prove institutional and gov contact."
+      "Transform your email into evidence by adding kayros1@dmail.provable.dev as To, Cc, or Bcc and receive a cryptographic proof. So you can publicly prove institutional contact."
   },
   {
     name: "Provable SDK",
     description:
-      "TypeScript, Python, and Golang packages for adding cryptographic notarization to critical APIs and systems.",
+      "Open-source SDKs for adding cryptographic integrity to critical APIs and systems.",
     href: "https://github.com/kuip/provable-sdk"
   },
   {
@@ -243,11 +243,11 @@ export const workflows = [
     label: "All products",
     title: "One stack, multiple workflows.",
     description:
-      "Kayros-based notarization across media & comms, real-world assets, database or file level.",
+      "Kayros-based cryptographic integrity across media & comms, real-world assets, database or file level.",
     bullets: [
       "Photos, videos, audio, GPS, sensors",
       "Documents, email, messages, web pages",
-      "RWA and industrial event notarization",
+      "RWA and industrial data streams",
       "Banking and blockchain transaction indexers"
     ],
     products: allProducts
@@ -259,7 +259,7 @@ export const workflows = [
     description:
       "For maritime software, public cameras, bodycams, drones, and industrial glasses where frame-level evidence and operational chronology both matter.",
     bullets: [
-      "Frame-level video & audio notarization",
+      "Frame-level tamper-evident video & audio",
       "Detection and action provenance",
       "Reviewable evidence for sensitive incidents"
     ],
@@ -286,7 +286,7 @@ export const workflows = [
       "If you are fighting a proof war (journalist, activist, researcher, citizen, etc.), we want to know your specific needs. Let's work together.",
     bullets: [
       "Capture-time media authenticity",
-      "Notarized web forms, webpages, and email flows",
+      "Tamper-evident records for web forms, webpages, and email flows",
       "Document history that remains inspectable later"
     ],
     products: commsProducts

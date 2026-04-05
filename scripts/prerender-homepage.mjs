@@ -112,7 +112,7 @@ function renderHtml() {
             <img src="/images/kayros.png" alt="Kayros" class="hero__logo" />
             <h1>Kayros</h1>
           </div>
-          <p class="hero__lead">High-throughput notarization for systems that need more than conventional logging, slower consensus, or fragile audit trails.</p>
+          <p class="hero__lead">High-throughput cryptographic integrity for data systems that need more than conventional logging, slower consensus, or fragile audit trails.</p>
           <div class="metric-pills">
             <span>&gt; 1 million TPS on one single level</span>
             <span>Multi-level expansion</span>

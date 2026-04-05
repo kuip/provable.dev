@@ -268,7 +268,7 @@ export function App() {
               <h1>Kayros</h1>
             </div>
             <p className="hero__lead">
-              High-throughput cryptographic notarization for time ordered data streams, with nanosecond precision.
+              High-throughput cryptographic integrity infrastructure for time ordered data streams, with nanosecond precision.
               Software and hardware metrology.
               Prevent tampering at CPU Core level.
             </p>
