@@ -13,8 +13,10 @@
       content="high-throughput, cryptographic integrity, time-ordered data, kayros, media integrity, media authentication, database integrity, real-world assets, frame-level video authentication"
     />
     <meta name="author" content="Provable" />
+    <meta name="application-name" content="Provable" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://provable.dev/" />
+    <link rel="alternate" type="text/plain" href="https://provable.dev/llms.txt" title="Provable LLM summary" />
 
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
@@ -26,6 +28,7 @@
     <link rel="preload" href="/fonts/RobotoCondensed-Light.woff2" as="font" type="font/woff2" crossorigin />
 
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Provable" />
     <meta property="og:url" content="https://provable.dev/" />
     <meta property="og:title" content="Provable: high-throughput cryptographic integrity for time-ordered data" />
     <meta
@@ -46,12 +49,43 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Provable",
-        "url": "https://provable.dev",
-        "logo": "https://provable.dev/images/provable.png",
-        "description": "Provable builds high-throughput cryptographic integrity infrastructure for data streams, media, databases, and real-world assets.",
-        "sameAs": ["https://x.com/is_provable"]
+        "@graph": [
+          {
+            "@type": "Organization",
+            "name": "Provable",
+            "url": "https://provable.dev",
+            "logo": "https://provable.dev/images/provable.png",
+            "description": "Provable builds high-throughput cryptographic integrity infrastructure for time-ordered data streams, media, databases, and real-world assets.",
+            "sameAs": ["https://x.com/is_provable"]
+          },
+          {
+            "@type": "WebSite",
+            "name": "Provable",
+            "url": "https://provable.dev/",
+            "description": "Provable builds high-throughput cryptographic integrity infrastructure for time-ordered data streams, media, databases, and real-world assets."
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "Kayros",
+            "applicationCategory": "SecurityApplication",
+            "url": "https://provable.dev/#kayros",
+            "description": "Kayros is a high-throughput system for cryptographic integrity and time-ordered data proofs."
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "Oliver",
+            "applicationCategory": "SecurityApplication",
+            "url": "https://oliver.provable.dev/",
+            "description": "Oliver provides frame-level cryptographic integrity and authentication for media, visual evidence, and asset-linked records."
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "Carpe!",
+            "applicationCategory": "SecurityApplication",
+            "url": "https://provable.dev/",
+            "description": "Carpe! provides record-level cryptographic integrity for databases and device data."
+          }
+        ]
       }
     </script>
   </head>
