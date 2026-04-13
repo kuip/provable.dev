@@ -89,8 +89,8 @@ function ImageMedia({ imageUrl, title }) {
 }
 
 function ProductCard({ product }) {
-  const content = (
-    <>
+  return (
+    <article className="product-card">
       <div className="product-card__media">
         {product.videoId ? (
           <VideoEmbed videoId={product.videoId} title={product.name} />
@@ -106,29 +106,23 @@ function ProductCard({ product }) {
         ) : null}
         <h3>{product.name}</h3>
         {product.href ? (
-          <span className="product-card__link-icon" aria-hidden="true">
-            ↗
-          </span>
+          <a
+            href={product.href}
+            target="_blank"
+            rel="noreferrer"
+            className="product-card__link-icon"
+            aria-label={`Open ${product.name} in a new tab`}
+            title={`Open ${product.name}`}
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3Zm5 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z" />
+            </svg>
+          </a>
         ) : null}
       </div>
       <p>{product.description}</p>
-    </>
+    </article>
   );
-
-  if (product.href) {
-    return (
-      <a
-        href={product.href}
-        target="_blank"
-        rel="noreferrer"
-        className="product-card product-card--link"
-      >
-        {content}
-      </a>
-    );
-  }
-
-  return <article className="product-card">{content}</article>;
 }
 
 function Carousel({ items, index, onPrev, onNext, renderItem, label, countLabel }) {

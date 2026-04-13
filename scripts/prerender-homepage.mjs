@@ -50,21 +50,21 @@ function renderProductCard(product) {
       ? renderImageMedia(product.imageUrl, product.name)
       : renderPlaceholder(product.name, product.logo);
 
-  const body = `
+  return `
+    <article class="product-card">
     <div class="product-card__media">${media}</div>
     <div class="product-card__head">
       ${product.logo ? `<img src="${escapeHtml(product.logo)}" alt="${escapeHtml(product.name)}" class="product-card__logo" />` : ""}
       <h3>${escapeHtml(product.name)}</h3>
-      ${product.href ? `<span class="product-card__link-icon" aria-hidden="true">↗</span>` : ""}
+      ${product.href ? `<a href="${escapeHtml(product.href)}" target="_blank" rel="noreferrer" class="product-card__link-icon" aria-label="Open ${escapeHtml(product.name)} in a new tab" title="Open ${escapeHtml(product.name)}">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3Zm5 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"></path>
+        </svg>
+      </a>` : ""}
     </div>
     <p>${escapeHtml(product.description)}</p>
+    </article>
   `;
-
-  if (product.href) {
-    return `<a href="${escapeHtml(product.href)}" target="_blank" rel="noreferrer" class="product-card product-card--link">${body}</a>`;
-  }
-
-  return `<article class="product-card">${body}</article>`;
 }
 
 function renderSlideCard(slide) {
