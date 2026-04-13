@@ -36,7 +36,8 @@ const visionProducts = [
     logo: "/images/carpe.png",
     description:
       "Record-level cryptographic integrity for every database insert and update, ordered on a global timeline.",
-    videoId: "EuwNDeDu9Ao"
+    videoId: "EuwNDeDu9Ao",
+    href: "https://carpe.provable.dev"
   },
   {
     name: "Provable SDK",
@@ -53,6 +54,15 @@ const industryProducts = [
     description:
       "Carpe! Tamper-evident data ingestion from BLE devices at database record level",
     videoId: "u4pYbgu3GVY",
+    href: "https://carpe.provable.dev"
+  },
+  {
+    name: "Carpe!",
+    logo: "/images/carpe.png",
+    description:
+      "Carpe! Data integrity proofs for real world assets (NFC/RFID, BLE, GPS) at database level",
+    videoId: "PaZRQqWXBtI",
+    href: "https://carpe.provable.dev"
   },
   {
     name: "Oliver for RWA",
@@ -67,7 +77,8 @@ const industryProducts = [
     logo: "/images/carpe.png",
     description:
       "Record-level cryptographic integrity for every database insert and update, ordered on a global timeline.",
-    videoId: "EuwNDeDu9Ao"
+    videoId: "EuwNDeDu9Ao",
+    href: "https://carpe.provable.dev"
   },
   {
     name: "Provable SDK",
@@ -154,6 +165,15 @@ export const allProducts = [
     description:
       "Carpe! Tamper-evident data ingestion from BLE devices at database record level",
     videoId: "u4pYbgu3GVY",
+    href: "https://carpe.provable.dev"
+  },
+  {
+    name: "Carpe!",
+    logo: "/images/carpe.png",
+    description:
+      "Carpe! Data integrity proofs for real world assets (NFC/RFID, BLE, GPS) at database level",
+    videoId: "PaZRQqWXBtI",
+    href: "https://carpe.provable.dev"
   },
   {
     name: "Oliver",
@@ -176,7 +196,8 @@ export const allProducts = [
     logo: "/images/carpe.png",
     description:
       "Record-level cryptographic integrity for every database insert and update, ordered on a global timeline.",
-    videoId: "EuwNDeDu9Ao"
+    videoId: "EuwNDeDu9Ao",
+    href: "https://carpe.provable.dev"
   },
   {
     name: "Veritas",
