@@ -94,7 +94,8 @@ const commsProducts = [
     logo: "/images/veritas.png",
     description:
       "A tamper-evident folder that captures file changes and document history with a cryptographic proof of integrity. Compatible with Google Drive and LibreOffice.",
-    videoId: "8VEWngK8S7E"
+    videoId: "8VEWngK8S7E",
+    href: "https://authorly.provable.dev",
   },
   {
     name: "Provable Form",
@@ -204,7 +205,8 @@ export const allProducts = [
     logo: "/images/veritas.png",
     description:
       "A tamper-evident folder that captures file changes and document history with a cryptographic proof of integrity. Compatible with Google Drive and LibreOffice.",
-    videoId: "8VEWngK8S7E"
+    videoId: "8VEWngK8S7E",
+    href: "https://authorly.provable.dev",
   },
   {
     name: "Provable Form",
