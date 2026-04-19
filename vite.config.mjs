@@ -64,6 +64,12 @@ export default defineConfig({
   plugins: [react(), legalRoutesDevPlugin()],
   build: {
     outDir: "dist",
-    emptyOutDir: false
+    emptyOutDir: false,
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, "index.html"),
+        proof: path.resolve(__dirname, "proof.html")
+      }
+    }
   }
 });

@@ -24,14 +24,10 @@ npm run dev
 
 The React workspace lives at `/app/` and is built into `dist/app/`.
 
-## Existing proof UI workflow
+## Proof UI
 ```bash
-cd ./provable-sdk/provable-sdk-ui
-npm run build:browser
-
-cd ./dist/browser
-python3 -m http.server 8080
-
-# open in browser
-# file:///path_to/provable.dev/proof.html?ui=local
+npm run dev
 ```
+
+The proof viewer at `/proof.html` is a Vite-built React entry that imports the
+published `@kuip/provable-ui` package.

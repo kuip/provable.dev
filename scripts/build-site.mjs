@@ -17,7 +17,6 @@ const DIST = path.join(ROOT, "dist");
 const STATIC_FILES = [
   "LICENSE",
   "_config.yml",
-  "proof.html",
   "robots.txt",
   "site.webmanifest",
   "sitemap.xml",

@@ -1,0 +1,294 @@
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url("/fonts/RobotoCondensed-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url("/fonts/RobotoCondensed-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url("/fonts/RobotoCondensed-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+
+:root {
+  color-scheme: light dark;
+  --proof-bg: #f4f7f5;
+  --proof-bg-2: #e7f0ee;
+  --proof-ink: #171d1c;
+  --proof-text: #2c3533;
+  --proof-muted: #64716e;
+  --proof-panel: rgba(255, 255, 255, 0.92);
+  --proof-panel-strong: #ffffff;
+  --proof-line: rgba(23, 29, 28, 0.12);
+  --proof-line-strong: rgba(23, 29, 28, 0.22);
+  --proof-accent: #007f74;
+  --proof-accent-strong: #005e57;
+  --proof-button-bg: #5f6f7a;
+  --proof-button-bg-hover: #4a5862;
+  --proof-danger: #b42318;
+  --proof-danger-bg: #fff0ee;
+  --proof-shadow: 0 18px 48px rgba(23, 29, 28, 0.08);
+}
+
+:root[data-proof-theme="dark"] {
+  --proof-bg: #161716;
+  --proof-bg-2: #20231f;
+  --proof-ink: #f1f4ef;
+  --proof-text: #d9ded8;
+  --proof-muted: #a8b1ab;
+  --proof-panel: rgba(36, 39, 36, 0.92);
+  --proof-panel-strong: #20231f;
+  --proof-line: rgba(241, 244, 239, 0.1);
+  --proof-line-strong: rgba(241, 244, 239, 0.18);
+  --proof-accent: #45c4b5;
+  --proof-accent-strong: #74dbd0;
+  --proof-button-bg: #6f757a;
+  --proof-button-bg-hover: #878d92;
+  --proof-danger: #ffb4a8;
+  --proof-danger-bg: rgba(180, 35, 24, 0.18);
+  --proof-shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Roboto Condensed", "Arial Narrow", "Liberation Sans Narrow", "Nimbus Sans Narrow", sans-serif;
+  color: var(--proof-text);
+  background:
+    linear-gradient(135deg, rgba(0, 127, 116, 0.13), transparent 36%),
+    linear-gradient(215deg, rgba(207, 72, 58, 0.08), transparent 34%),
+    linear-gradient(180deg, var(--proof-bg) 0%, var(--proof-bg-2) 100%);
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+}
+
+#proof-root {
+  min-height: 100vh;
+}
+
+.proof-shell {
+  width: min(1180px, calc(100vw - 32px));
+  margin: 0 auto;
+  padding: 24px 0 56px;
+}
+
+.proof-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: start;
+  margin-bottom: 24px;
+  padding: 14px;
+  border: 1px solid var(--proof-line);
+  border-radius: 8px;
+  background: var(--proof-panel);
+  box-shadow: var(--proof-shadow);
+}
+
+.proof-header__copy {
+  min-width: 0;
+}
+
+.proof-kicker,
+.proof-upload__eyebrow {
+  margin: 0 0 6px;
+  color: var(--proof-accent-strong);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.proof-header h1,
+.proof-upload h2 {
+  margin: 0;
+  color: var(--proof-ink);
+  line-height: 1.04;
+}
+
+.proof-header h1 {
+  font-size: 2rem;
+}
+
+.proof-header p,
+.proof-upload p {
+  margin: 6px 0 0;
+  color: var(--proof-muted);
+  line-height: 1.5;
+}
+
+.proof-home-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.proof-home-link:hover {
+  opacity: 0.85;
+}
+
+.proof-home-link img {
+  width: 44px;
+  height: 44px;
+}
+
+.proof-error {
+  margin-bottom: 18px;
+  padding: 12px 14px;
+  border: 1px solid color-mix(in srgb, var(--proof-danger) 34%, transparent);
+  border-radius: 8px;
+  color: var(--proof-danger);
+  background: var(--proof-danger-bg);
+}
+
+.proof-upload {
+  display: grid;
+  gap: 22px;
+  justify-items: center;
+  min-height: 330px;
+  padding: 46px 24px;
+  border: 2px dashed var(--proof-line-strong);
+  border-radius: 8px;
+  text-align: center;
+  background: var(--proof-panel);
+  box-shadow: var(--proof-shadow);
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.proof-upload--dragging {
+  border-color: var(--proof-accent);
+  background: color-mix(in srgb, var(--proof-panel-strong) 88%, var(--proof-accent) 12%);
+  transform: translateY(-2px);
+}
+
+.proof-upload h2 {
+  font-size: 2.25rem;
+}
+
+.proof-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 18px;
+  border: 1px solid var(--proof-button-bg);
+  border-radius: 8px;
+  color: #ffffff;
+  background: var(--proof-button-bg);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.proof-button:hover {
+  border-color: var(--proof-button-bg-hover);
+  background: var(--proof-button-bg-hover);
+}
+
+.proof-button--secondary {
+  color: var(--proof-button-bg);
+  background: transparent;
+}
+
+.proof-button--secondary:hover {
+  color: #ffffff;
+  background: var(--proof-button-bg);
+}
+
+.proof-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 14px;
+}
+
+.proof-viewer {
+  border: 1px solid var(--proof-line);
+  border-radius: 8px;
+  background: var(--proof-panel-strong);
+  box-shadow: var(--proof-shadow);
+  overflow: hidden;
+}
+
+.proof-viewer .provable-ui {
+  --pv-font-family: "Roboto Condensed", "Arial Narrow", "Liberation Sans Narrow", "Nimbus Sans Narrow", sans-serif;
+  --pv-accent: var(--proof-accent);
+  --pv-accent-strong: var(--proof-accent-strong);
+  --pv-border: var(--proof-line);
+  background: transparent;
+  padding: 18px;
+}
+
+.proof-viewer .provable-ui[data-theme="dark"] {
+  --pv-panel: var(--proof-panel-strong);
+  --pv-border: var(--proof-line);
+}
+
+.proof-viewer .provable-ui .pv-section,
+.proof-viewer .provable-ui .pv-hash,
+.proof-viewer .provable-ui .pv-textarea,
+.proof-viewer .provable-ui .pv-scroll-box,
+.proof-viewer .provable-ui .pv-form-snapshot {
+  border-radius: 8px;
+}
+
+@media (max-width: 720px) {
+  .proof-shell {
+    width: min(100vw - 20px, 1180px);
+    padding-top: 10px;
+  }
+
+  .proof-header {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .proof-header h1 {
+    font-size: 1.65rem;
+  }
+
+  .proof-upload h2 {
+    font-size: 1.8rem;
+  }
+
+  .proof-actions {
+    justify-content: stretch;
+  }
+
+  .proof-actions .proof-button {
+    width: 100%;
+  }
+
+  .proof-viewer .provable-ui {
+    padding: 12px;
+  }
+}
