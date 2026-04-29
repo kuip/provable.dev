@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
-import { ethos, kayrosSlides, workflows } from "./siteData";
+import { kayrosSlides, workflows } from "./siteData";
+import { SiteFooter } from "./components/siteFooter";
 
 function hashToWorkflowId(hash) {
   const match = /^#workflows-([a-z0-9-]+)$/i.exec(hash || "");
@@ -248,6 +249,7 @@ export function App() {
               </a>
               <a href="#kayros">Kayros</a>
               <a href="#workflows">Use Cases</a>
+              <a href="/blog/">Blog</a>
               <a href="/proof.html" className="topnav__cta">
                 Verify a proof
               </a>
@@ -363,43 +365,7 @@ export function App() {
         </section>
 
       </main>
-
-      <footer className="site-footer">
-        <div className="site-footer__brand">
-          <div className="site-footer__brand-row">
-            <img src="/images/provable.png" alt="Provable" className="site-footer__logo" />
-            <p>Infrastructure for evidence, provenance, and high-trust systems.</p>
-          </div>
-          <p className="site-footer__title">Motto</p>
-          <div className="site-footer__motto-lines">
-            {ethos.map((statement) => (
-              <p key={statement}>{statement}</p>
-            ))}
-          </div>
-        </div>
-
-        <div className="site-footer__contact">
-          <p className="site-footer__title">Contact</p>
-          <div className="site-footer__links">
-            <a href="https://x.com/is_provable" target="_blank" rel="noreferrer" aria-label="Provable on X">
-              <svg viewBox="0 0 24 24" aria-hidden="true" className="site-footer__icon">
-                <path d="M18.901 1.153h3.68l-8.039 9.188 9.457 12.506H16.594L10.79 15.26l-6.64 7.587H.47l8.598-9.826L0 1.153h7.595l5.247 6.942 6.059-6.942Zm-1.291 19.49h2.039L6.487 3.24H4.3L17.61 20.643Z" />
-              </svg>
-              <span>@is_provable</span>
-            </a>
-            <a href="mailto:contact@mail.provable.dev">contact@mail.provable.dev</a>
-          </div>
-        </div>
-
-        <div className="site-footer__legal">
-          <p className="site-footer__title">Legal</p>
-          <a href="https://www.kuip.co.uk" target="_blank" rel="noreferrer">
-            &copy; 2025-present Kuip Limited
-          </a>
-          <a href="/privacy/">Privacy</a>
-          <a href="/terms/">Terms</a>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   );
 }

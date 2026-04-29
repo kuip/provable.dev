@@ -31,3 +31,23 @@ npm run dev
 
 The proof viewer at `/proof.html` is a Vite-built React entry that imports the
 published `@kuip/provable-ui` package.
+
+## Blog
+
+Blog posts live in `/blog/*.md` and are rendered to static HTML routes:
+
+- `/blog/`
+- `/blog/<slug>/`
+
+Each post uses simple frontmatter:
+
+```md
+---
+title: "Post title"
+author: "Author name"
+date: "2026-04-29"
+slug: "post-slug"
+summary: "Short summary used on the blog index and post header."
+image: "/images/example.png"
+---
+```

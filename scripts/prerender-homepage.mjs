@@ -1,7 +1,8 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { ethos, kayrosSlides, workflows } from "../app/src/siteData.js";
+import { kayrosSlides, workflows } from "../app/src/siteData.js";
+import { renderSiteFooterHtml } from "../app/src/components/siteFooter.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -101,6 +102,7 @@ function renderHtml() {
             </a>
             <a href="#kayros">Kayros</a>
             <a href="#workflows">Use Cases</a>
+            <a href="/blog/">Blog</a>
             <a href="/proof.html" class="topnav__cta">Verify a proof</a>
           </nav>
         </header>
@@ -178,37 +180,7 @@ function renderHtml() {
       </section>
 
     </main>
-
-    <footer class="site-footer">
-      <div class="site-footer__brand">
-        <div class="site-footer__brand-row">
-          <img src="/images/provable.png" alt="Provable" class="site-footer__logo" />
-          <p>Infrastructure for evidence, provenance, and high-trust systems.</p>
-        </div>
-        <p class="site-footer__title">Motto</p>
-        <div class="site-footer__motto-lines">
-          ${ethos.map((line) => `<p>${escapeHtml(line)}</p>`).join("")}
-        </div>
-      </div>
-      <div class="site-footer__contact">
-        <p class="site-footer__title">Contact</p>
-        <div class="site-footer__links">
-          <a href="https://x.com/is_provable" target="_blank" rel="noreferrer" aria-label="Provable on X">
-            <svg viewBox="0 0 24 24" aria-hidden="true" class="site-footer__icon">
-              <path d="M18.901 1.153h3.68l-8.039 9.188 9.457 12.506H16.594L10.79 15.26l-6.64 7.587H.47l8.598-9.826L0 1.153h7.595l5.247 6.942 6.059-6.942Z"></path>
-            </svg>
-            <span>@is_provable</span>
-          </a>
-          <a href="mailto:contact@mail.provable.dev">contact@mail.provable.dev</a>
-        </div>
-      </div>
-      <div class="site-footer__legal">
-        <p class="site-footer__title">Legal</p>
-        <a href="https://www.kuip.co.uk" target="_blank" rel="noreferrer">&copy; 2025-present Kuip Limited</a>
-        <a href="/privacy/">Privacy</a>
-        <a href="/terms/">Terms</a>
-      </div>
-    </footer>
+    ${renderSiteFooterHtml()}
   `;
 }
 

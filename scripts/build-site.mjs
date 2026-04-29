@@ -8,6 +8,12 @@ import {
   renderLegalHtml,
   renderRedirectHtml
 } from "./legal-pages.mjs";
+import {
+  loadBlogPosts,
+  renderBlogIndexHtml,
+  renderBlogPostHtml,
+  renderPathRedirectHtml
+} from "./blog-pages.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -92,6 +98,23 @@ async function buildSite() {
     await fs.writeFile(
       path.join(DIST, `${page.slug}.html`),
       renderRedirectHtml(page.slug, SITE_ORIGIN),
+      "utf8"
+    );
+  }
+
+  const posts = await loadBlogPosts(ROOT);
+  const blogDir = path.join(DIST, "blog");
+  await fs.mkdir(blogDir, { recursive: true });
+  await fs.writeFile(path.join(blogDir, "index.html"), renderBlogIndexHtml(posts), "utf8");
+  await fs.writeFile(path.join(DIST, "blog.html"), renderPathRedirectHtml("/blog/", SITE_ORIGIN), "utf8");
+
+  for (const post of posts) {
+    const postDir = path.join(blogDir, post.slug);
+    await fs.mkdir(postDir, { recursive: true });
+    await fs.writeFile(path.join(postDir, "index.html"), renderBlogPostHtml(post), "utf8");
+    await fs.writeFile(
+      path.join(blogDir, `${post.slug}.html`),
+      renderPathRedirectHtml(`/blog/${post.slug}/`, SITE_ORIGIN),
       "utf8"
     );
   }

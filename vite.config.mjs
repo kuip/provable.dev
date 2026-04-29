@@ -9,6 +9,12 @@ import {
   renderMarkdown,
   renderLegalHtml
 } from "./scripts/legal-pages.mjs";
+import {
+  loadBlogPosts,
+  renderBlogIndexHtml,
+  renderBlogPostHtml,
+  resolveBlogRoute
+} from "./scripts/blog-pages.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -22,7 +28,37 @@ function legalRoutesDevPlugin() {
           const match = resolveLegalRoute(pathname);
 
           if (!match) {
-            next();
+            const blogMatch = resolveBlogRoute(pathname);
+
+            if (!blogMatch) {
+              next();
+              return;
+            }
+
+            if (blogMatch.type === "redirect") {
+              res.statusCode = 302;
+              res.setHeader("Location", blogMatch.targetPath);
+              res.end();
+              return;
+            }
+
+            const posts = await loadBlogPosts(__dirname);
+            if (blogMatch.type === "index") {
+              res.statusCode = 200;
+              res.setHeader("Content-Type", "text/html; charset=utf-8");
+              res.end(renderBlogIndexHtml(posts));
+              return;
+            }
+
+            const post = posts.find((entry) => entry.slug === blogMatch.slug);
+            if (!post) {
+              next();
+              return;
+            }
+
+            res.statusCode = 200;
+            res.setHeader("Content-Type", "text/html; charset=utf-8");
+            res.end(renderBlogPostHtml(post));
             return;
           }
 

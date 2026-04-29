@@ -11,6 +11,7 @@ Provable builds cryptographic integrity infrastructure for time-ordered data, me
 ## Main website
 
 - Homepage: https://provable.dev/
+- Blog index: https://provable.dev/blog/
 - Proof viewer: https://provable.dev/proof.html
 - Privacy: https://provable.dev/privacy/
 - Terms: https://provable.dev/terms/
@@ -23,4 +24,4 @@ Provable builds cryptographic integrity infrastructure for time-ordered data, me
 
 ## Summary
 
-Provable focuses on tamper-evident, cryptographically verifiable, time-ordered records for high-trust systems. The main products highlighted on the website are Kayros, Oliver, and Carpe!.
+Provable focuses on tamper-evident, cryptographically verifiable, time-ordered records for high-trust systems. The main products highlighted on the website are Kayros, Oliver, and Carpe!. The blog at `https://provable.dev/blog/` contains markdown-authored articles about integrity systems, timestamping, evidence workflows, and related product decisions.
