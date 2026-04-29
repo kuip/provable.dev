@@ -492,6 +492,16 @@ function buildPageShell({
         font-weight: 700;
       }
 
+      .blog-content a {
+        color: var(--accent);
+        text-decoration: underline;
+        text-underline-offset: 0.14em;
+      }
+
+      .blog-content a:hover {
+        color: var(--ink);
+      }
+
       .site-footer {
         display: grid;
         grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 0.9fr);
