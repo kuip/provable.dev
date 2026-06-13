@@ -115,8 +115,8 @@ function renderHtml() {
             <a href="#kayros">Kayros</a>
             <a href="#workflows">Use Cases</a>
             <a href="/blog/">Blog</a>
-            <a href="/proof.html" class="topnav__cta">Verify a proof</a>
             <a href="https://dashboard.kayros.provable.dev" target="_blank" rel="noreferrer">Dashboard</a>
+            <a href="/proof.html" class="topnav__cta">Verify a proof</a>
           </nav>
         </header>
       </div>

@@ -178,34 +178,44 @@ function buildPageShell({
 
       :root {
         color-scheme: light dark;
-        --bg: #f3f7f3;
-        --bg-2: #e8f0ea;
-        --surface: rgba(255, 255, 255, 0.96);
-        --surface-2: rgba(255, 255, 255, 0.8);
-        --ink: #16201c;
-        --text: #2c3531;
-        --muted: #66726c;
-        --line: rgba(22, 32, 28, 0.12);
-        --line-strong: rgba(22, 32, 28, 0.18);
-        --accent: #007f74;
-        --accent-2: #c34c36;
-        --shadow: 0 18px 48px rgba(22, 32, 28, 0.08);
+        --ink: #16202a;
+        --text: #24303a;
+        --muted: #66727d;
+        --line: rgba(20, 27, 33, 0.1);
+        --line-strong: rgba(20, 27, 33, 0.16);
+        --bg-top: #eef2f5;
+        --bg-mid: #e9edf1;
+        --bg-bottom: #e3e8ec;
+        --panel: rgba(255, 255, 255, 0.9);
+        --panel-strong: rgba(255, 255, 255, 0.98);
+        --panel-soft: rgba(246, 248, 250, 0.98);
+        --warm: #6f7f89;
+        --cool: #5d7385;
+        --button-bg: #639cce;
+        --button-bg-strong: #98958f;
+        --button-text: #ffffff;
+        --shadow: 0 10px 24px rgba(17, 24, 31, 0.035);
+        --shadow-soft: 0 4px 12px rgba(17, 24, 31, 0.028);
       }
 
       @media (prefers-color-scheme: dark) {
         :root {
-          --bg: #171917;
-          --bg-2: #1f2420;
-          --surface: rgba(29, 33, 30, 0.96);
-          --surface-2: rgba(35, 39, 36, 0.82);
-          --ink: #f0f4f0;
-          --text: #dde4de;
-          --muted: #a6b0a8;
-          --line: rgba(240, 244, 240, 0.08);
-          --line-strong: rgba(240, 244, 240, 0.14);
-          --accent: #4bcab8;
-          --accent-2: #ef8d78;
-          --shadow: 0 22px 56px rgba(0, 0, 0, 0.28);
+          --ink: #e6eaec;
+          --text: #cdd3d6;
+          --muted: #9ea4a8;
+          --line: rgba(241, 243, 244, 0.05);
+          --line-strong: rgba(241, 243, 244, 0.1);
+          --bg-top: #181a1c;
+          --bg-mid: #1c1f22;
+          --bg-bottom: #212428;
+          --panel: #23272b;
+          --panel-strong: #202428;
+          --panel-soft: #2a2f34;
+          --button-bg: #4a6b89;
+          --button-bg-strong: #1c1c1d;
+          --button-text: #eeeeee;
+          --shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+          --shadow-soft: 0 5px 14px rgba(0, 0, 0, 0.12);
         }
       }
 
@@ -215,10 +225,7 @@ function buildPageShell({
 
       body {
         margin: 0;
-        background:
-          linear-gradient(135deg, rgba(0, 127, 116, 0.14), transparent 34%),
-          linear-gradient(215deg, rgba(195, 76, 54, 0.08), transparent 30%),
-          linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+        background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 52%, var(--bg-bottom) 100%);
         color: var(--text);
         font: 16px/1.72 "Roboto Condensed", "Arial Narrow", "Liberation Sans Narrow", "Nimbus Sans Narrow", sans-serif;
       }
@@ -233,64 +240,97 @@ function buildPageShell({
         max-width: 100%;
       }
 
-      .blog-shell {
-        width: min(1080px, calc(100vw - 32px));
-        margin: 0 auto;
-        padding: 22px 0 56px;
+      .blog-shell,
+      .site-footer {
+        width: min(1480px, calc(100vw - 24px));
       }
 
-      .blog-topbar {
+      .blog-shell {
+        margin: 0 auto;
+        padding: 20px 0 56px;
+      }
+
+      .masthead {
         display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 18px;
+        margin-bottom: 18px;
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: flex-end;
         align-items: center;
         gap: 16px;
-        padding: 12px 14px;
+        flex: 1 1 640px;
+        min-height: 56px;
+        padding: 8px 16px;
         border: 1px solid var(--line);
-        border-radius: 8px;
-        background: var(--surface);
-        box-shadow: var(--shadow);
+        border-radius: 999px;
+        background: var(--panel-strong);
+        backdrop-filter: blur(8px);
+        box-shadow: var(--shadow-soft);
       }
 
-      .blog-topbar__brand {
+      .brand {
         display: inline-flex;
         align-items: center;
-        gap: 10px;
+        gap: 18px;
+        padding: 2px 0;
+        flex: 0 0 auto;
+      }
+
+      .brand--logo-only {
+        padding: 0;
+      }
+
+      .brand--inline {
         margin-right: auto;
+        gap: 0;
+        padding: 0 8px 0 4px;
       }
 
-      .blog-topbar__brand img {
-        width: 40px;
-        height: 40px;
+      .brand__logo {
+        width: 100px;
+        height: 100px;
       }
 
-      .blog-topbar__brand span {
+      .brand__name {
         color: var(--ink);
-        font-size: 1.18rem;
-        font-weight: 700;
+        font-size: 1.8rem;
+        font-weight: bolder;
+        line-height: 1;
+        letter-spacing: 0.01em;
+        text-transform: lowercase;
+        padding-left: 5px;
       }
 
-      .blog-topbar nav {
+      .topnav {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         gap: 16px;
+        width: 100%;
       }
 
-      .blog-topbar nav a {
+      .topnav a {
         color: var(--muted);
+        font-size: 0.98rem;
       }
 
-      .blog-topbar nav a:hover,
-      .blog-topbar nav a[aria-current="page"] {
+      .topnav a:hover,
+      .topnav a[aria-current="page"] {
         color: var(--ink);
       }
 
       .blog-hero,
       .blog-entry,
       .blog-post {
-        margin-top: 18px;
+        margin-top: 20px;
         border: 1px solid var(--line);
-        border-radius: 8px;
-        background: var(--surface);
+        border-radius: 32px;
+        background: var(--panel);
         box-shadow: var(--shadow);
       }
 
@@ -302,10 +342,10 @@ function buildPageShell({
 
       .blog-hero__eyebrow {
         margin: 0;
-        color: var(--accent);
-        font-size: 0.82rem;
+        color: var(--warm);
+        font-size: 0.84rem;
         font-weight: 700;
-        letter-spacing: 0.02em;
+        letter-spacing: 0.03em;
       }
 
       .blog-hero h1,
@@ -374,15 +414,15 @@ function buildPageShell({
       }
 
       .blog-entry__content a:hover h2 {
-        color: var(--accent);
+        color: var(--cool);
       }
 
       .blog-entry__image {
         min-height: 200px;
         border: 1px solid var(--line);
-        border-radius: 8px;
+        border-radius: 24px;
         overflow: hidden;
-        background: var(--surface-2);
+        background: color-mix(in srgb, var(--panel-soft) 88%, transparent);
       }
 
       .blog-entry__image img {
@@ -398,7 +438,7 @@ function buildPageShell({
       .blog-post__image {
         aspect-ratio: 3 / 1;
         border-bottom: 1px solid var(--line);
-        background: var(--surface-2);
+        background: color-mix(in srgb, var(--panel-soft) 88%, transparent);
         overflow: hidden;
       }
 
@@ -457,13 +497,13 @@ function buildPageShell({
       .blog-content blockquote {
         margin: 0;
         padding: 0 0 0 16px;
-        border-left: 3px solid var(--accent);
+        border-left: 3px solid var(--cool);
         color: var(--ink);
       }
 
       .blog-content code {
-        background: color-mix(in srgb, var(--accent) 10%, transparent);
-        border: 1px solid color-mix(in srgb, var(--accent) 20%, var(--line));
+        background: color-mix(in srgb, var(--cool) 10%, transparent);
+        border: 1px solid color-mix(in srgb, var(--cool) 20%, var(--line));
         border-radius: 4px;
         padding: 0.08rem 0.3rem;
         font: inherit;
@@ -474,8 +514,8 @@ function buildPageShell({
         padding: 14px;
         overflow: auto;
         border: 1px solid var(--line);
-        border-radius: 8px;
-        background: color-mix(in srgb, var(--surface) 90%, #000000 10%);
+        border-radius: 24px;
+        background: color-mix(in srgb, var(--panel-soft) 94%, transparent);
       }
 
       .blog-content pre code {
@@ -488,12 +528,12 @@ function buildPageShell({
         display: inline-flex;
         align-items: center;
         gap: 10px;
-        color: var(--accent);
+        color: var(--cool);
         font-weight: 700;
       }
 
       .blog-content a {
-        color: var(--accent);
+        color: var(--cool);
         text-decoration: underline;
         text-underline-offset: 0.14em;
       }
@@ -507,7 +547,7 @@ function buildPageShell({
         grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 0.9fr);
         align-items: start;
         gap: 24px;
-        margin-top: 18px;
+        margin-top: 20px;
         padding: 0 0 28px;
         color: var(--muted);
       }
@@ -580,17 +620,22 @@ function buildPageShell({
       }
 
       @media (max-width: 780px) {
-        .blog-shell {
-          width: min(100vw - 20px, 1080px);
-          padding-top: 10px;
+        .blog-shell,
+        .site-footer {
+          width: min(100vw - 16px, 1480px);
         }
 
-        .blog-topbar {
-          align-items: flex-start;
-          flex-direction: column;
+        .masthead {
+          gap: 12px;
         }
 
-        .blog-topbar nav {
+        .topbar {
+          width: 100%;
+          justify-content: flex-start;
+          border-radius: 28px;
+        }
+
+        .topnav {
           gap: 14px;
         }
 
@@ -639,18 +684,23 @@ function renderBlogShell({
 }) {
   const shell = `
     <main class="blog-shell">
-      <header class="blog-topbar">
-        <a href="/" class="blog-topbar__brand" aria-label="Provable home">
-          <img src="/images/provable.png" alt="Provable" />
-          <span>provable</span>
+      <div class="masthead">
+        <a href="/" class="brand brand--logo-only" aria-label="Provable">
+          <img src="/images/provable.png" alt="Provable" class="brand__logo" />
         </a>
-        <nav aria-label="Primary">
-          <a href="/#kayros">Kayros</a>
-          <a href="/#workflows">Use Cases</a>
-          <a href="/blog/"${currentPath.startsWith("/blog") ? ' aria-current="page"' : ""}>Blog</a>
-          <a href="/proof.html">Verify a proof</a>
-        </nav>
-      </header>
+        <header class="topbar">
+          <nav class="topnav" aria-label="Primary">
+            <a href="/" class="brand brand--inline" aria-label="Provable">
+              <span class="brand__name">provable</span>
+            </a>
+            <a href="/#kayros">Kayros</a>
+            <a href="/#workflows">Use Cases</a>
+            <a href="/blog/"${currentPath.startsWith("/blog") ? ' aria-current="page"' : ""}>Blog</a>
+            <a href="https://dashboard.kayros.provable.dev" target="_blank" rel="noreferrer">Dashboard</a>
+          <a href="/proof.html" class="topnav__cta">Verify a proof</a>
+          </nav>
+        </header>
+      </div>
       ${content}
       ${renderSiteFooterHtml()}
     </main>
