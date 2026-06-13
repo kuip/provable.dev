@@ -208,6 +208,44 @@ img {
   box-shadow: var(--shadow);
 }
 
+.sdk-showcase {
+  margin: 2px 0 4px;
+}
+
+.sdk-showcase__grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.sdk-link-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  color: var(--button-text);
+  font-size: 0.98rem;
+  font-weight: 700;
+  background: var(--button-bg);
+}
+
+.sdk-link-button__icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  fill: currentColor;
+  flex: 0 0 auto;
+}
+
+.sdk-link-button:hover {
+  background: var(--button-bg-strong);
+}
+
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);

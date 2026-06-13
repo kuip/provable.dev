@@ -22,6 +22,23 @@ export const kayrosSlides = [
   },
 ];
 
+export const sdkHighlights = [
+  {
+    name: "provable sdk",
+    href: "https://github.com/kuip/provable-sdk",
+    label: "General integration",
+    description:
+      "Add cryptographic integrity and proof workflows to applications, APIs, and data systems."
+  },
+  {
+    name: "provable audio-video sdk",
+    href: "https://github.com/kuip/provable-ave",
+    label: "Audio and video integrity",
+    description:
+      "Build authenticated capture, processing, and verification flows for audio-video pipelines."
+  }
+];
+
 const visionProducts = [
   {
     name: "Oliver",
@@ -44,6 +61,12 @@ const visionProducts = [
     description:
       "Open-source SDKs for adding cryptographic integrity to critical APIs and systems.",
     href: "https://github.com/kuip/provable-sdk"
+  },
+  {
+    name: "Provable AVE SDK",
+    description:
+      "Open-source SDKs for adding cryptographic integrity to video, audio and data streams.",
+    href: "https://github.com/kuip/provable-ave"
   }
 ];
 

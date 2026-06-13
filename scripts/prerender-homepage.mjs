@@ -1,7 +1,7 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { kayrosSlides, workflows } from "../app/src/siteData.js";
+import { kayrosSlides, sdkHighlights, workflows } from "../app/src/siteData.js";
 import { renderSiteFooterHtml } from "../app/src/components/siteFooter.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -84,6 +84,17 @@ function renderSlideCard(slide) {
   </article>`;
 }
 
+function renderSdkCard(sdk) {
+  return `
+    <a href="${escapeHtml(sdk.href)}" target="_blank" rel="noreferrer" class="sdk-link-button">
+      <svg viewBox="0 0 24 24" aria-hidden="true" class="sdk-link-button__icon">
+        <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.4 7.86 10.92.58.11.79-.25.79-.56 0-.28-.01-1.19-.02-2.16-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.72-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.19 1.18a10.99 10.99 0 0 1 5.8 0c2.22-1.49 3.19-1.18 3.19-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.67.41.36.77 1.07.77 2.17 0 1.57-.01 2.83-.01 3.22 0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"></path>
+      </svg>
+      ${escapeHtml(sdk.name)}
+    </a>
+  `;
+}
+
 function renderHtml() {
   const visibleKayros = kayrosSlides.slice(0, Math.min(2, kayrosSlides.length));
   const workflow = workflows[0];
@@ -100,13 +111,21 @@ function renderHtml() {
             <a href="/" class="brand brand--inline" aria-label="Provable">
               <span class="brand__name">provable</span>
             </a>
+            <a href="#sdks">SDKs</a>
             <a href="#kayros">Kayros</a>
             <a href="#workflows">Use Cases</a>
             <a href="/blog/">Blog</a>
             <a href="/proof.html" class="topnav__cta">Verify a proof</a>
+            <a href="https://dashboard.kayros.provable.dev" target="_blank" rel="noreferrer">Dashboard</a>
           </nav>
         </header>
       </div>
+
+      <section id="sdks" class="sdk-showcase">
+        <div class="sdk-showcase__grid">
+          ${sdkHighlights.map((sdk) => renderSdkCard(sdk)).join("")}
+        </div>
+      </section>
 
       <section id="kayros" class="panel hero">
         <div class="hero__copy">
