@@ -41,6 +41,21 @@ export const sdkHighlights = [
 
 const visionProducts = [
   {
+    name: "[DEMO] Kyber Tech integration for real-time low-latency stream integrity checks",
+    description:
+      "Provable-powered Kyber Desktop Streaming: cryptographic data integrity for real-time streams",
+    videoId: "4R4Tz6j6GqM",
+    href: "https://github.com/kuip/provable-ave"
+  },
+  {
+    name: "[DEMO] Data integrity for streamed medical data",
+    logo: "/images/carpe.png",
+    description:
+      "Carpe! mobile app integration with Synapse Protocol from Science Corp.",
+    videoId: "NMEsoTyPlf0",
+    href: "https://carpe.provable.dev"
+  },
+  {
     name: "Oliver",
     logo: "/images/oliver.png",
     description:
@@ -184,6 +199,21 @@ const blockchainProducts = [
 
 export const allProducts = [
   {
+    name: "[DEMO] Kyber Tech integration for real-time low-latency stream integrity checks",
+    description:
+      "Provable-powered Kyber Desktop Streaming: cryptographic data integrity for real-time streams",
+    videoId: "4R4Tz6j6GqM",
+    href: "https://github.com/kuip/provable-ave"
+  },
+  {
+    name: "[DEMO] Data integrity for streamed medical data",
+    logo: "/images/carpe.png",
+    description:
+      "Carpe! mobile app integration with Synapse Protocol from Science Corp.",
+    videoId: "NMEsoTyPlf0",
+    href: "https://carpe.provable.dev"
+  },
+  {
     name: "Carpe!",
     logo: "/images/carpe.png",
     description:
@@ -289,11 +319,11 @@ export const workflows = [
     label: "All products",
     title: "One stack, multiple workflows.",
     description:
-      "Kayros-based cryptographic integrity across media & comms, real-world assets, database or file level.",
+      "Kayros-based cryptographic integrity across video, audio, data streams, media & comms, real-world assets, database or file level.",
     bullets: [
-      "Photos, videos, audio, GPS, sensors",
-      "Documents, email, messages, web pages",
-      "RWA and industrial data streams",
+      "Real-time video, audio, data streams",
+      "Documents, text, images, email, messages, web pages",
+      "RWA and industrial data streams, GPS, sensors",
       "Banking and blockchain transaction indexers"
     ],
     products: allProducts
